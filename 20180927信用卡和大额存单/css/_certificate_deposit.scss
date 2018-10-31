@@ -1,0 +1,69 @@
+.c-deposit__money-pos {
+  text-align: center;
+}
+.c-deposit__money-start {
+  height: 100%;
+  background: #f3f9ff;
+  padding: 0 10px;
+  border-radius: 6px;
+  color: #80c2f2;
+}
+
+.c-deposit__cd-checkorrec {
+  text-align: right;
+  margin-top: px2rem(20px);
+  padding-bottom: px2rem(20px);
+}
+
+.c-deposit__wrap-long {
+  background-color: #fff;
+  padding: 0 px2rem(30px);
+
+  .mui-input-row:last-child {
+    border-bottom: none;
+  }
+
+  .mui-input-row {
+    .mui-icon-arrowright {
+      color: #ccc;
+    }
+
+    input {
+      flex: 1;
+    }
+
+    input.cash_advance_spw {
+      width: 65%;
+    }
+
+    em {
+      text-align: right;
+      flex: 1;
+      display: inline-block;
+      line-height: 45px;
+      font-size: 15px;
+    }
+  }
+
+  .mui-input-row label {
+    width: px2rem(320px);
+    padding-left: 0px;
+  }
+
+  .cash_advance_input_p {
+    font-size: 15px;
+    line-height: 40px;
+    color: $input-color;
+  }
+
+  .cash_advance_txt-span {
+    font-size: 15px !important;
+  }
+}
+
+.c-deposit__color-1{
+  color:#5caceb;
+}
+.c-deposit__color-2{
+  color:#333;
+}

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="yes" name="apple-touch-fullscreen" />
+    <meta content="telephone=no,email=no" name="format-detection" />
+    <title>大额现金分期</title>
+    <meta name="keywords" content=" " />
+    <meta name="description" content=" " />
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no" />
+    <meta content="telephone=no,email=no" name="format-detection">
+    <link rel="stylesheet" href="css/mui.min.css">
+    <link rel="stylesheet" href="css/common.css">
+    <script src="js/rem.js"></script>
+</head>
+
+<body>
+    <section class="c-page">
+        <div class="c-page-tans">
+            <!-- 顶栏 -->
+            <header class="mui-bar mui-bar-nav">
+                <a class="mui-icon mui-icon-left-nav mui-pull-left"><span class="c-top-bar__back">返回</span></a>
+                <h1 class="mui-title">大额现金分期</h1>
+                <a class="mui-pull-right mui-icon mui-icon-home"></a>
+            </header>
+            <!-- 顶栏 -->
+            <div class="mui-content u-mui">
+                <div>
+                    <div class="mui-input-row cash_advance__tip">
+                        <label>卡号信息</label>
+                    </div>
+                    <div class="cash_advance__wrap">
+                        <div class="mui-input-row">
+                            <label>信用卡卡号</label>
+                            <strong class="cash_advance_input_p">123456****890</strong>
+                        </div>
+                        <div class="mui-input-row">
+                            <label>可用额度</label>
+                            <strong class="cash_advance_input_p">1000000.00元</strong>
+                        </div>
+                        <div class="mui-input-row">
+                            <label>收款账号</label>
+                            <strong class="cash_advance_input_p">123456****890</strong>
+                        </div>
+                        <div class="mui-input-row">
+                            <div class="c-card-binding__checknum-wrap">
+                                <label>收款账号</label>
+                                <strong class="cash_advance_input_p c-card__largebill-txt-strong" id="cIdCard">123456****890</strong>
+                            </div>
+                            <input class="c-card__get-checknum" id="cCardBox" type="button" value="获 取">
+                        </div>
+
+                    </div>
+                </div>
+                <div>
+                    <div class="mui-input-row cash_advance__tip">
+                        <label>申请信息</label>
+                    </div>
+                    <div class="cash_advance__wrap">
+                        <div class="mui-input-row">
+                            <label>申请金额</label>
+                            <strong class="cash_advance_input_p">2000.00元</strong>
+                        </div>
+                        <div class="mui-input-row">
+                            <label>分期期数</label>
+                            <strong id="cCardBox3" class="cash_advance_input_p"><span id="cIdCard3">3期</span>
+                                <span class="mui-icon mui-icon-arrowright"></span></strong>
+                        </div>
+                        <div class="mui-input-row">
+                            <label>申请用途</label>
+                            <strong id="cCardBox2" class="cash_advance_input_p"><span id="cIdCard2">购物消费</span>
+                                <span class="mui-icon mui-icon-arrowright"></span></strong>
+                        </div>
+                        <div class="mui-input-row">
+                            <label>手续费收取</label>
+                            <strong class="cash_advance_input_p">分期收取</strong>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- 协议&分期 -->
+                <div class="c-card-binding__deal-wrap">
+                    <input class="mui-icon mui-icon-check-1" name="deal" type="checkbox">
+                    我已阅读并同意以下协议。
+                    <p class="c-credit__billing_deal-link">
+                        <a href="">《标准信用卡大额现金分期业务协议》</a>
+                    </p>
+                </div>
+                <div class="c-button-wrap">
+                    <button type="button" class="mui-btn mui-btn-block mui-btn-primary">马上购买</button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <script src="js/mui.min.js"></script>
+    <script src="js/mui.picker.min.js"></script>
+    <script>
+        (function ($, doc) {
+            // 银行卡选择
+            $.ready(function () {
+                var userPicker = new $.PopPicker();
+                userPicker.setData([{
+                    value: '01',
+                    text: '11111****1111'
+                }, {
+                    value: '02',
+                    text: '22222****2222'
+                }, {
+                    value: '03',
+                    text: '33333****3333'
+                }]);
+                var showUserPickerButton = doc.getElementById('cCardBox');
+                var userResult = doc.getElementById('cCardItem');
+                showUserPickerButton.addEventListener('tap', function (event) {
+                    userPicker.show(function (items) {
+                        userResult.innerText = JSON.stringify(items[0]);
+                        //返回 false 可以阻止选择框的关闭
+                        //return false;
+                    });
+                }, false);
+
+
+                var userPicker2 = new $.PopPicker();
+                userPicker2.setData([{
+                    value: '01',
+                    text: '购物消费1'
+                }, {
+                    value: '02',
+                    text: '购物消费2'
+                }, {
+                    value: '03',
+                    text: '购物消费3'
+                }]);
+                var showUserPickerButton2 = doc.getElementById('cCardBox2');
+                var userResult2 = doc.getElementById('cCardItem2');
+                showUserPickerButton2.addEventListener('tap', function (event) {
+                    userPicker2.show(function (items) {
+                        userResult2.innerText = JSON.stringify(items[0]);
+                        //返回 false 可以阻止选择框的关闭
+                        //return false;
+                    });
+                }, false);
+
+                var userPicker3 = new $.PopPicker();
+                userPicker3.setData([{
+                    value: '01',
+                    text: '1期'
+                }, {
+                    value: '02',
+                    text: '2期'
+                }, {
+                    value: '03',
+                    text: '3期'
+                }]);
+                var showUserPickerButton = doc.getElementById('cCardBox3');
+                var userResult3 = doc.getElementById('cCardItem3');
+                showUserPickerButton.addEventListener('tap', function (event) {
+                    userPicker3.show(function (items) {
+                        userResult3.innerText = JSON.stringify(items[0]);
+                        //返回 false 可以阻止选择框的关闭
+                        //return false;
+                    });
+                }, false);
+
+
+
+
+            });
+
+        })(mui, document);
+
+    </script>
+</body>
+
+</html>

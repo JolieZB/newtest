@@ -1,0 +1,135 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="yes" name="apple-mobile-web-app-capable" />
+  <meta content="yes" name="apple-touch-fullscreen" />
+  <meta content="telephone=no,email=no" name="format-detection" />
+  <title>理财产品追加</title>
+  <meta name="keywords" content=" " />
+  <meta name="description" content=" " />
+  <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no" />
+  <meta content="telephone=no,email=no" name="format-detection">
+  <link rel="stylesheet" href="css/mui.min.css">
+  <link rel="stylesheet" href="css/common.css">
+  <script src="js/rem.js"></script>
+</head>
+
+<body>
+  <section class="c-page">
+    <!-- 交易列表 -->
+    <div class="c-page-tans">
+      <!-- 顶栏 -->
+      <header class="mui-bar mui-bar-nav">
+        <a class="mui-icon mui-icon-left-nav mui-pull-left"><span class="c-top-bar__back">返回</span></a>
+        <h1 class="mui-title">理财产品追加</h1>
+      </header>
+      <!-- 顶栏 -->
+      <div class="mui-content u-mui">
+
+        <!-- 理财购买页 -->
+        <div class="u-info-wrap">
+          <div class="u-info-list__wrap">
+            <h3 class="u-info-tit">
+              海盈系列第1212期
+            </h3>
+            <div class="c-manage-money-buy__num-wrap">
+              <p>追加金额</p>
+              <div class="c-manage-money-buy__num">
+                ￥<input type="number" name="" placeholder="请输入购买金额">
+              </div>
+              <div class="c-manage-money-detail__main-info-tag">
+                <strong><span class="c-main-info-tag__icon c-main-info-tag__icon_2"></span>追加起点5000元</strong>
+                <strong><span class="c-main-info-tag__icon c-main-info-tag__icon_3"></span>500元递增</strong>
+              </div>
+            </div>
+            <div class="c-manage-money-buy__input-wrap c-card-binding__wrap">
+              <div class="mui-input-row">
+                <label>持有份额</label>
+                <strong class="c-input-p">
+                  5000份
+                </strong>
+              </div>
+              <div class="mui-input-row">
+                <label>分红方式</label>
+                <strong class="c-input-p">
+                  现金分红
+                </strong>
+              </div>
+            </div>
+          </div>
+          <div class="u-info-list__wrap">
+            <div class="c-manage-money-buy__input-wrap c-card-binding__wrap">
+              <div class="mui-input-row">
+                <label>交易账号</label>
+                <strong class="c-input-p">海峡银行储蓄卡(1233)</strong>
+              </div>
+
+              <div class="mui-input-row">
+                <label>可用余额</label>
+                <strong class="c-input-p">100000.00元</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /交易详情列表 -->
+        <!-- 协议&购买 -->
+        <div class="c-button-wrap">
+          <button type="button" class="mui-btn mui-btn-block mui-btn-primary">确认</button>
+        </div>
+        <!-- /协议&购买 -->
+      </div>
+    </div>
+    <!-- /交易列表 -->
+  </section>
+  <script src="js/mui.min.js"></script>
+  <script src="js/mui.picker.min.js"></script>
+  <script>
+    (function ($, doc) {
+      // 银行卡选择
+      $.ready(function () {
+        var userPicker = new $.PopPicker();
+        userPicker.setData([{
+          value: 'ywj',
+          text: '董事长 叶文洁'
+        }, {
+          value: 'aaa',
+          text: '总经理 1艾AA'
+        }, {
+          value: 'gezh',
+          text: '歌者'
+        }]);
+        var showUserPickerButton = doc.getElementById('cCardBox');
+        var userResult = doc.getElementById('cCardItem');
+        showUserPickerButton.addEventListener('tap', function (event) {
+          userPicker.show(function (items) {
+            userResult.innerText = JSON.stringify(items[0]);
+            //返回 false 可以阻止选择框的关闭
+            //return false;
+          });
+        }, false);
+
+        var userPicker2 = new $.PopPicker();
+        userPicker2.setData([{
+          value: 'ywj',
+          text: '现金分红'
+        }, {
+          value: 'aaa',
+          text: '红利再投资'
+        }]);
+        var showUserPickerButton2 = doc.getElementById('cTypeSeletBox');
+        var userResult2 = doc.getElementById('cTypeSeletBoxItem');
+        showUserPickerButton2.addEventListener('tap', function (event) {
+          userPicker2.show(function (items) {
+            userResult2.innerText = JSON.stringify(items[0]);
+            //返回 false 可以阻止选择框的关闭
+            //return false;
+          });
+        }, false);
+      });
+    })(mui, document);
+  </script>
+</body>
+
+</html>

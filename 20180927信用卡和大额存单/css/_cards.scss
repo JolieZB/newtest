@@ -1,0 +1,355 @@
+// 我的银行卡
+.c-card__wrap {
+  display: block;
+  position: relative;
+  margin: px2rem(20px) px2rem(30px);
+  border-radius: px2rem(15px);
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+  overflow: hidden;
+  border: none;
+}
+
+.c-card__add-wrap {
+  padding: px2rem(30px);
+}
+
+.c-card__add__left-wrap {
+  float: left;
+
+  .mui-icon {
+    font-size: 40px;
+    font-weight: bold;
+    color: $main-color;
+  }
+}
+
+.c-card__add__right-wrap {
+  margin-left: 45px;
+
+  span {
+    display: block;
+  }
+
+  .c-card__add-title {
+    margin-bottom: 5px;
+    font-size: 15px;
+    color: $main-color;
+  }
+
+  .c-card__add-sub-title {
+    font-size: 11px;
+    color: $sub-color;
+  }
+}
+
+.c-card__main-info {
+  position: relative;
+  box-sizing: border-box;
+  height: px2rem(210px);
+  padding: px2rem(30px);
+  color: #fff;
+
+  &:after {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: px2rem(214px);
+    height: px2rem(128px);
+    content: "";
+    background: url(../images/card_logo.png) no-repeat;
+    background-size: px2rem(214px) auto;
+  }
+}
+
+.c-card__debit .c-card__main-info {
+  background-image: linear-gradient(to right, #73b3de, #318ec8);
+}
+
+.c-card__crebit .c-card__main-info {
+  background-image: linear-gradient(to right, #5ba1d0, #4268b9);
+}
+
+.c-card__card-type {
+
+  font-size: 18px;
+
+  span {
+    margin-left: 0.5em;
+    font-size: 16px;
+  }
+}
+
+.c-card__card-balance {
+  margin-top: px2rem(45px);
+  font-size: 16px;
+}
+
+.c-card__relieve-btn {
+  position: absolute;
+  top: px2rem(16px);
+  right: px2rem(20px);
+  font-size: 12px;
+  color: #fff;
+  font-weight: 600;
+
+  span {
+    margin-left: 3px;
+    font-weight: normal;
+  }
+}
+
+.c-card__main-option {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  // justify-content: center;
+  min-height: 55px;
+  line-height: 55px;
+
+  a {
+    display: inline-block;
+    box-sizing: border-box;
+    // flex: 1;
+    width: 25%;
+    height: 25px;
+    line-height: 25px;
+    margin: 15px 0;
+    text-align: center;
+    border-right: 1px solid #ccc;
+    font-size: 14px;
+    color: #666;
+
+    &:last-child,
+    &:nth-child(4n) {
+      border-right: none;
+    }
+
+    &:nth-child(n + 5) {
+      display: none;
+    }
+
+    .mui-icon {
+      vertical-align: middle;
+    }
+  }
+}
+
+.c-card__wrap .c-card__btn-show-more {
+  position: relative;
+  &:before{
+    position: absolute;
+    left: px2rem(30px);
+    top:55px;
+    content:"";
+    width: px2rem(750px - 30px * 2 * 2 );
+    height: 1px;
+    background-color: #ccc;
+  }
+  a {
+    display: inline-block;
+  }
+}
+
+/* --------------------- */
+
+// 绑定银行卡
+.c-card-binding__wrap {
+  margin-top: px2rem(20px);
+  background-color: #fff;
+
+  .mui-input-row:last-child {
+    border-bottom: none;
+  }
+
+  .c-input-p {
+    font-size: 15px;
+    line-height: 40px;
+    color: $input-color;
+  }
+}
+
+.u-mui {
+  background-color: transparent; // 改写mui
+
+  .mui-input-row {
+    box-sizing: border-box;
+    display: flex;
+    height: 44px;
+    padding-top: 2px;
+    border-bottom: 1px solid #ccc;
+
+    label,
+    input {
+      font-size: 15px;
+    }
+
+    label {
+      box-sizing: border-box;
+      min-width: px2rem(190px);
+      line-height: 20px;
+      color: $label-color;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+      box-sizing: border-box;
+      flex: 1;
+      width: px2rem(750px - 190px);
+      color: $input-color;
+
+      &::-webkit-input-placeholder {
+        color: $placeholder-color;
+      }
+    }
+
+    label~input {
+      float: left;
+    }
+
+    .c-card-binding__checknum-wrap {
+      position: relative;
+      float: left;
+    }
+
+    input.c-card-binding__checknum {
+      width: px2rem(290px);
+    }
+
+    .c-card__get-checknum,
+    .u-data__input-btn {
+      float: right;
+      box-sizing: border-box;
+      // width: px2rem(270px);
+      width: 74px;
+      padding: 10px;
+      text-align: center;
+      border: none;
+      border-left: 1px solid #ccc;
+      border-radius: 0;
+      color: $main-color;
+
+      &:disabled {
+        color: $placeholder-color;
+      }
+    }
+    .u-data__input-btn{
+      width: 70px;
+    }
+  }
+
+  .mui-radio {
+    float: left;
+    margin-right: 10px;
+
+    label {
+      width: auto;
+      padding-left: 26px;
+    }
+
+    input[type="radio"] {
+      top: 9px;
+      left: 0;
+
+      &:before {
+        font-size: 20px;
+      }
+    }
+  }
+
+  .mui-btn-block {
+    height: 45px;
+    line-height: 45px;
+    padding: 0;
+    background-color: $main-color;
+    border: none;
+  }
+}
+
+.c-card-binding__deal-wrap {
+  margin-top: px2rem(20px);
+  padding: px2rem(30px);
+  font-size: 14px;
+}
+
+.mui-icon-check-1 {
+  margin-right: 5px;
+  font-size: 18px;
+  color: $main-color;
+  background: none;
+  border: none;
+  -webkit-appearance: none;
+}
+
+.c-card-binding__deal-link {
+  padding: px2rem(30px) px2rem(30px) 0 px2rem(53px);
+
+  a {
+    display: inline-block;
+    line-height: 2;
+    color: $main-color;
+    text-decoration: underline;
+  }
+}
+
+.mui-icon-check-1:before {
+  content: "\e413";
+}
+
+.mui-icon-check-1:checked:before {
+  content: "\e443";
+}
+
+.c-button-wrap {
+  margin-top: px2rem(60px);
+  margin-bottom: px2rem(30px);
+  padding: 0 px2rem(30px);
+}
+
+// 协议页面
+.c-article-tit {
+  margin: px2rem(20px) px2rem(30px);
+  padding: px2rem(15px) 0 px2rem(30px);
+  border-bottom: 1px solid $sub-color;
+  font-size: 18px;
+  text-align: center;
+
+  h5 {
+    color: $main-color;
+  }
+}
+
+.c-article-content {
+  margin: px2rem(20px) px2rem(30px);
+  padding: px2rem(15px);
+  line-height: 2;
+  font-size: 14px;
+
+  p {
+    color: $input-color;
+  }
+
+  b {
+    font-weight: bold;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .u-mui {
+    .mui-input-row {
+      label {
+        // credit_card_activate_pw_set 宽度
+        min-width: px2rem(255px);
+      }
+
+      input[type="text"],
+      input[type="password"] {
+        width: px2rem(750px - 255px);
+      }
+
+      input.c-card-binding__checknum {
+        width: px2rem(260px);
+      }
+    }
+  }
+}

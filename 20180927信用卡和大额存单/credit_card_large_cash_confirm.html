@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="yes" name="apple-touch-fullscreen" />
+    <meta content="telephone=no,email=no" name="format-detection" />
+    <title>大额现金分期</title>
+    <meta name="keywords" content=" " />
+    <meta name="description" content=" " />
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no" />
+    <meta content="telephone=no,email=no" name="format-detection">
+    <link rel="stylesheet" href="css/mui.min.css">
+    <link rel="stylesheet" href="css/common.css">
+    <script src="js/rem.js"></script>
+    <script src="js/mui.min.js"></script>
+    <script src="js/mui.picker.min.js"></script>
+</head>
+
+<body>
+    <section class="c-page">
+        <div class="c-page-tans">
+            <!-- 顶栏 -->
+            <header class="mui-bar mui-bar-nav">
+                <a class="mui-icon mui-icon-left-nav mui-pull-left"><span class="c-top-bar__back">返回</span></a>
+                <h1 class="mui-title">大额现金分期</h1>
+                <a class="mui-pull-right mui-icon mui-icon-home"></a>
+            </header>
+            <!-- 顶栏 -->
+            <div class="mui-content u-mui">
+                <div>
+                    <div class="mui-input-row cash_advance__tip">
+                        <label>卡号信息</label>
+                    </div>
+                    <div class="cash_advance__wrap">
+                        <div class="mui-input-row">
+                            <label>信用卡卡号</label>
+                            <em>123456****890</em>
+                        </div>
+                        <div class="mui-input-row">
+                            <label>可用额度</label>
+                            <em>1000000.00元</em>
+                        </div>
+                        <div class="mui-input-row">
+                            <label>收款账号</label>
+                            <em>6230****22222</em>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="mui-input-row cash_advance__tip">
+                        <label>申请信息</label>
+                    </div>
+                    <div class="cash_advance__wrap">
+                        <div class="mui-input-row">
+                            <label>申请金额</label>
+                            <em>2000.00元</em>
+                        </div>
+                        <div class="mui-input-row">
+                            <label>分期期数</label>
+                            <em>3期</em>
+                        </div>
+                        <div class="mui-input-row">
+                            <label>申请用途</label>
+                            <em>购物消费</em>
+                        </div>
+                        <div class="mui-input-row">
+                            <label>手续费收取</label>
+                            <em>分期收取</em>
+                        </div>
+                        <div class="mui-input-row">
+                            <label>收取费总额</label>
+                            <em>60.00元</em>
+                        </div>
+                    </div>
+                </div>
+                <div class="c-credit__billing_pwd cash_advance__wrap">
+                    <div class="mui-input-row">
+                        <div class="c-card-binding__checknum-wrap">
+                            <label>验证码</label>
+                            <input type="text" class="mui-input-clear c-card-binding__checknum" placeholder="请输入验证码"
+                                maxlength="6">
+                        </div>
+                        <input class="c-card__get-checknum" type="button" value="获 取">
+                    </div>
+                    <div class="mui-input-row">
+                        <label>交易密码</label>
+                        <input type="password" required class="mui-input-clear cash_advance_spw" placeholder="请输入交易密码">
+                    </div>
+                </div>
+                <div class="cash_advance__botbtn">
+                    <button type="button" id="confirmBtn" class="mui-btn mui-btn-block mui-btn-primary">确 认</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        // alertBtn 弹窗
+        document.getElementById("confirmBtn").addEventListener('tap', function () {
+            var btnArray = ['确定'];
+            mui.alert('您尾号6080的信用卡大额现金分期交易成功！', '安全提示', btnArray, function (e) { })
+        });
+    </script>
+</body>
+
+</html>

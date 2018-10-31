@@ -1,0 +1,265 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="yes" name="apple-mobile-web-app-capable" />
+  <meta content="yes" name="apple-touch-fullscreen" />
+  <meta content="telephone=no,email=no" name="format-detection" />
+  <title>福建海峡银行</title>
+  <meta name="keywords" content=" " />
+  <meta name="description" content=" " />
+  <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no" />
+  <meta content="telephone=no,email=no" name="format-detection">
+  <link rel="stylesheet" href="css/mui.min.css">
+  <link rel="stylesheet" href="css/common.css">
+  <script src="js/rem.js"></script>
+</head>
+
+<body>
+  <section class="c-page">
+    <!-- 顶栏 -->
+    <header class="mui-bar mui-bar-nav">
+      <a class="mui-icon mui-icon-left-nav mui-pull-left"><span class="c-top-bar__back">返回</span></a>
+      <h1 class="mui-title">信用卡账单</h1>
+    </header>
+    <!-- 顶栏 -->
+    <!-- 信用卡账单 -->
+    <div class="mui-content u-mui">
+      <!-- 银行卡 -->
+      <div id="cCardBox" class="c-card-trans-bar">
+        <span class="c-bar-logo"></span>
+        <span id="cCardItem" class="c-card-tans-card">海峡银行信用卡(1233)</span>
+        <span class="mui-icon mui-icon-arrowright"></span>
+      </div>
+      <!-- /银行卡 -->
+      <!-- tab_bar -->
+      <div class="c-card-tans__tans-select c-credit-card-bill__tabbar">
+        <a class="c-card-tans__tans-select-active" href="">本期账单</a>
+        <a href="">未出账单</a>
+        <a href="">历史账单</a>
+      </div>
+      <!-- /tab_bar -->
+      <!-- tabContent -->
+      <!-- tab1 -->
+      <div class="c-credit-card-bill__bill-wrap">
+        <!-- 单期账单 -->
+        <div class="c-credit-card-bill__bill-item">
+          <div class="c-credit-card-bill__bill-item-tit">
+            还款日 09-12<em class="u-corlor-0">待还款</em><!-- <em class="u-corlor-1">已还款</em><em class="u-corlor-2">到期未还款</em> -->
+          </div>
+          <ul class="c-credit-card-bill__bill-item-detail">
+            <li>账单金额<span>1212.00元</span></li>
+            <li>已还款金额<span>1212.00元</span></li>
+            <li>最低还款金额<span>1212.00元</span></li>
+            <li>账单月份<span>2030-12</span></li>
+          </ul>
+          <div class="c-credit-card-bill__bill-item-btn">
+            <span class="u-btn-border">还款</span>
+            <span class="u-btn-border">账单分期</span>
+          </div>
+        </div>
+        <!-- /单期账单 -->
+        <!-- 账单明细 -->
+        <div class="c-credit-card-bill__bill-list-wrap u-mt-20">
+          <div class="u-info-wrap">
+            <div class="u-info-list__wrap">
+              <h3 class="u-info-tit">
+                交易明细
+              </h3>
+              <ul class="c-credit-card-bill__bill-list">
+                <li>
+                  <p><strong>保费代收</strong><span>2018-01-01</span></p>
+                  <em>9000.00元</em>
+                </li>
+                <li>
+                  <p><strong>保费代收</strong><span>2018-01-01</span></p>
+                  <em>9000.00元</em>
+                </li>
+                <li>
+                  <p><strong>保费代收</strong><span>2018-01-01</span></p>
+                  <em>-9000.00元</em>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- /账单明细 -->
+      </div>
+      <!-- /tab1 -->
+      <!-- tab2 -->
+      <div class="c-credit-card-bill__bill-wrap u-hide">
+        <!-- 账单明细 -->
+        <div class="c-credit-card-bill__bill-list-wrap">
+          <div class="u-info-wrap">
+            <div class="u-info-list__wrap">
+              <h3 class="u-info-tit">
+                交易明细
+              </h3>
+              <ul class="c-credit-card-bill__bill-list">
+                <li>
+                  <p><strong>保费代收</strong><span>2018-01-01</span></p>
+                  <em>9000.00元</em>
+                </li>
+                <li>
+                  <p><strong>保费代收</strong><span>2018-01-01</span></p>
+                  <em>9000.00元</em>
+                </li>
+                <li>
+                  <p><strong>保费代收</strong><span>2018-01-01</span></p>
+                  <em>-9000.00元</em>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- /账单明细 -->
+      </div>
+      <!-- /tab2 -->
+      <!-- tab3 -->
+      <div class="c-credit-card-bill__bill-wrap u-hide">
+        <!-- 单期账单 -->
+        <div class="c-credit-card-bill__bill-item">
+          <div class="c-credit-card-bill__bill-item-tit">
+            <strong id='cardDate' data-options='{"type":"month","beginYear":2014,"endYear":2016}' class="btn c-card-tans__time-select c-input-p"><span>2017-12</span><span class="c-calendar"></span></strong>
+          </div>
+          <ul class="c-credit-card-bill__bill-item-detail">
+            <li>账单金额<span>1212.00元</span></li>
+            <li>已还款金额<span>1212.00元</span></li>
+            <li>最低还款金额<span>1212.00元</span></li>
+            <li>账单月份<span>2030-12</span></li>
+          </ul>
+          <div class="c-credit-card-bill__bill-item-btn">
+            <span class="u-btn-border">还款</span>
+            <span class="u-btn-border">账单分期</span>
+          </div>
+        </div>
+        <!-- /单期账单 -->
+        <!-- 账单明细 -->
+        <div class="c-credit-card-bill__bill-list-wrap u-mt-20">
+          <div class="u-info-wrap">
+            <div class="u-info-list__wrap">
+              <h3 class="u-info-tit">
+                交易明细
+              </h3>
+              <ul class="c-credit-card-bill__bill-list">
+                <li>
+                  <p><strong>保费代收</strong><span>2018-01-01</span></p>
+                  <em>9000.00元</em>
+                </li>
+                <li>
+                  <p><strong>保费代收</strong><span>2018-01-01</span></p>
+                  <em>9000.00元</em>
+                </li>
+                <li>
+                  <p><strong>保费代收</strong><span>2018-01-01</span></p>
+                  <em>-9000.00元</em>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- /账单明细 -->
+      </div>
+      <!-- /tab3 -->
+      <!-- /tabContent -->
+    </div>
+    <!-- /信用卡账单 -->
+  </section>
+  <script src="js/mui.min.js"></script>
+  <script src="js/mui.picker.min.js"></script>
+  <script src="js/jquery-1.10.1.min.js"></script>
+  <script>
+
+    // tab切换
+    $(".c-credit-card-bill__tabbar a").on("click", function(e){
+      e.preventDefault();
+      var index = $(this).index();
+      $(this).parent().find('a').removeClass('c-card-tans__tans-select-active').eq(index).addClass('c-card-tans__tans-select-active');
+      $(".c-credit-card-bill__bill-wrap").addClass("u-hide").eq(index).removeClass("u-hide");
+    });
+    (function ($, doc) {
+      // 银行卡选择
+      $.ready(function () {
+        var userPicker = new $.PopPicker();
+        userPicker.setData([{
+          value: 'ywj',
+          text: '身份证'
+        }, {
+          value: 'aaa',
+          text: '户口簿'
+        }, {
+          value: 'aaa',
+          text: '中国护照'
+        }, {
+          value: 'gezh',
+          text: '军人证'
+        }]);
+        var showUserPickerButton = doc.getElementById('cCardBox');
+        var userResult = doc.getElementById('cIdCard');
+        showUserPickerButton.addEventListener('tap', function (event) {
+          userPicker.show(function (items) {
+            userResult.innerText = JSON.stringify(items[0]);
+            //返回 false 可以阻止选择框的关闭
+            //return false;
+          });
+        }, false);
+
+
+
+      });
+      // 日期
+      // var result = $('#result')[0];
+      var btns = $('.btn');
+      btns.each(function (i, btn) {
+        btn.addEventListener('tap', function () {
+          var _self = this;
+          if (_self.picker) {
+            _self.picker.show(function (rs) {
+              // result.innerText = '选择结果: ' + rs.text;
+              _self.picker.dispose();
+              _self.picker = null;
+            });
+          } else {
+            var optionsJson = this.getAttribute('data-options') || '{}';
+            var options = JSON.parse(optionsJson);
+            var id = this.getAttribute('id');
+            /*
+             * 首次显示时实例化组件
+             * 示例为了简洁，将 options 放在了按钮的 dom 上
+             * 也可以直接通过代码声明 optinos 用于实例化 DtPicker
+             */
+            _self.picker = new $.DtPicker(options);
+            _self.picker.show(function (rs) {
+              /*
+               * rs.value 拼合后的 value
+               * rs.text 拼合后的 text
+               * rs.y 年，可以通过 rs.y.vaue 和 rs.y.text 获取值和文本
+               * rs.m 月，用法同年
+               * rs.d 日，用法同年
+               * rs.h 时，用法同年
+               * rs.i 分（minutes 的第二个字母），用法同年
+               */
+              // result.innerText = '选择结果: ' + rs.text;
+              /* 
+               * 返回 false 可以阻止选择框的关闭
+               * return false;
+               */
+              /*
+               * 释放组件资源，释放后将将不能再操作组件
+               * 通常情况下，不需要示放组件，new DtPicker(options) 后，可以一直使用。
+               * 当前示例，因为内容较多，如不进行资原释放，在某些设备上会较慢。
+               * 所以每次用完便立即调用 dispose 进行释放，下次用时再创建新实例。
+               */
+              _self.picker.dispose();
+              _self.picker = null;
+            });
+          }
+
+        }, false);
+      });
+    })(mui, document);
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,105 @@
+.u-mt-20 {
+  margin-top: px2rem(20px);
+}
+
+.u-loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 99999999;
+}
+
+.u-loading__box {
+  position: absolute;
+  box-sizing: border-box;
+  left: 50%;
+  top: 40%;
+  width: 110px;
+  height: 110px;
+  margin-left: -60px;
+  padding-top: 20px;
+  background-color: rgba(0, 0, 0, .5);
+  border-radius: 10px;
+  text-align: center;
+
+  .mui-spinner {
+    font-size: 30px;
+  }
+
+  p {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #fff;
+  }
+
+  .mui-spinner {
+    display: inline-block;
+    width: 36px;
+    height: 36px;
+    -webkit-transform-origin: 50%;
+    transform-origin: 50%;
+    -webkit-animation: spinner-spin 1s step-end infinite;
+    animation: spinner-spin 1s step-end infinite;
+  }
+
+  .mui-spinner:after {
+    display: block;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-position: 50%;
+    background-size: 100%;
+    background-repeat: no-repeat;
+  }
+}
+
+// 左右对齐信息列表
+.u-data__wrap {}
+
+.u-data__tit {
+  height: 44px;
+  line-height: 44px;
+  padding: 0 px2rem(30px);
+  font-size: 16px;
+  color: #333;
+}
+
+.u-data__list-wrap {
+  padding: 0 px2rem(30px);
+  background-color: #fff;
+
+  .mui-input-row {
+    &:last-child {
+      border-bottom: none;
+    }
+
+    label {
+      padding-left: 0;
+    }
+
+    strong {
+      font-size: 14px;
+    }
+  }
+}
+
+.u-data__list-item {
+  height: 44px;
+  line-height: 44px;
+  border-bottom: 1px solid #ccc;
+  font-size: 16px;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  strong {
+    float: right;
+    height: 44px;
+    line-height: 44px;
+    font-size: 14px;
+    color: #333;
+  }
+}

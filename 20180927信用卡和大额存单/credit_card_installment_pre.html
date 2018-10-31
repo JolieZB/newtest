@@ -1,0 +1,136 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="yes" name="apple-mobile-web-app-capable" />
+  <meta content="yes" name="apple-touch-fullscreen" />
+  <meta content="telephone=no,email=no" name="format-detection" />
+  <title>信用卡分期</title>
+  <meta name="keywords" content=" " />
+  <meta name="description" content=" " />
+  <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no" />
+  <meta content="telephone=no,email=no" name="format-detection">
+  <link rel="stylesheet" href="css/mui.min.css">
+  <link rel="stylesheet" href="css/common.css">
+  <script src="js/rem.js"></script>
+</head>
+
+<body>
+  <section class="c-page">
+    <!-- 顶栏 -->
+    <header class="mui-bar mui-bar-nav">
+      <a class="mui-icon mui-icon-left-nav mui-pull-left"><span class="c-top-bar__back">返回</span></a>
+      <h1 class="mui-title">信用卡分期</h1>
+      <a class="mui-pull-right mui-icon mui-icon-home"></a>
+    </header>
+    <!-- 顶栏 -->
+    <!-- 信用卡分期 -->
+    <div class="mui-content u-mui">
+      <div class="c-card-binding__wrap c-credit-card__wrap cash_advance__wrap">
+        <div class="mui-input-row">
+          <label>信用卡卡号</label>
+          <strong id="cCardBox" class="cash_advance_input_p"><span id="cIdCard" class="cash_advance_txt-span">11******66</span>
+            <span class="mui-icon mui-icon-arrowright"></span></strong>
+        </div>
+        <div class="mui-input-row">
+          <label>分期类型</label>
+          <strong id="cCardBox2" class="cash_advance_input_p"><span id="cIdCard2">账单分期</span>
+            <span class="mui-icon mui-icon-arrowright"></span></strong>
+        </div>
+        <div class="mui-input-row">
+          <label>手续费收取</label>
+          <strong id="cCardBox3" class="cash_advance_input_p"><span id="cIdCard3">分期收取</span>
+            <span class="mui-icon mui-icon-arrowright"></span></strong>
+        </div>
+      </div>
+      <div class="cash_advance__botbtn">
+        <button type="button" class="mui-btn mui-btn-block mui-btn-primary">下一步</button>
+      </div>
+    </div>
+    <!-- /激活信用卡 -->
+
+  </section>
+  <script src="js/mui.min.js"></script>
+  <script src="js/mui.picker.min.js"></script>
+  <script>
+    (function ($, doc) {
+
+      $.ready(function () {
+        // 信用卡选择
+        var userPicker = new $.PopPicker();
+        userPicker.setData([{
+          value: '01',
+          text: '1122******33'
+        }, {
+          value: '02',
+          text: '1122******22'
+        }, {
+          value: '03',
+          text: '1122******66'
+        }]);
+        var showUserPickerButton = doc.getElementById('cCardBox');
+        var userResult = doc.getElementById('cCardItem');
+        showUserPickerButton.addEventListener('tap', function (event) {
+          userPicker.show(function (items) {
+            userResult.innerText = JSON.stringify(items[0]);
+            //返回 false 可以阻止选择框的关闭
+            //return false;
+          });
+        }, false);
+
+        //分期类型选择
+        var userPicker2 = new $.PopPicker();
+        userPicker2.setData([{
+          value: '01',
+          text: '账单分期'
+        }, {
+          value: '02',
+          text: '现金分期'
+        }, {
+          value: '03',
+          text: '大额现金分期'
+        },
+        {
+          value: '04',
+          text: '交易分期'
+        }]);
+        var showUserPickerButton2 = doc.getElementById('cCardBox2');
+        var userResult2 = doc.getElementById('cCardItem2');
+        showUserPickerButton2.addEventListener('tap', function (event) {
+          userPicker2.show(function (items) {
+            userResult2.innerText = JSON.stringify(items[0]);
+            //返回 false 可以阻止选择框的关闭
+            //return false;
+          });
+        }, false);
+
+        //收取类型选择
+        var userPicker3 = new $.PopPicker();
+        userPicker3.setData([{
+          value: '01',
+          text: '收取类型1'
+        }, {
+          value: '02',
+          text: '收取类型2'
+        }, {
+          value: '03',
+          text: '收取类型3'
+        }]);
+        var showUserPickerButton3 = doc.getElementById('cCardBox3');
+        var userResult3 = doc.getElementById('cCardItem3');
+        showUserPickerButton3.addEventListener('tap', function (event) {
+          userPicker3.show(function (items) {
+            userResult3.innerText = JSON.stringify(items[0]);
+            //返回 false 可以阻止选择框的关闭
+            //return false;
+          });
+        }, false);
+
+
+      });
+    })(mui, document);
+  </script>
+</body>
+
+</html>

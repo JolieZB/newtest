@@ -1,0 +1,213 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="yes" name="apple-mobile-web-app-capable" />
+  <meta content="yes" name="apple-touch-fullscreen" />
+  <meta content="telephone=no,email=no" name="format-detection" />
+  <title>理财列表</title>
+  <meta name="keywords" content=" " />
+  <meta name="description" content=" " />
+  <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no" />
+  <meta content="telephone=no,email=no" name="format-detection">
+  <link rel="stylesheet" href="css/mui.min.css">
+  <link rel="stylesheet" href="css/common.css">
+  <script src="js/rem.js"></script>
+</head>
+
+<body>
+  <section class="c-page">
+    <!-- 交易列表 -->
+    <div class="c-page-tans">
+      <!-- 顶栏 -->
+      <header class="mui-bar mui-bar-nav">
+        <a class="mui-icon mui-icon-left-nav mui-pull-left"><span class="c-top-bar__back">返回</span></a>
+        <h1 class="mui-title">理财</h1>
+      </header>
+      <!-- 顶栏 -->
+      <div class="mui-content u-mui">
+
+        <!-- 理财产品列表 -->
+        <div class="c-manage-money-list__pull-wrap">
+          <!--下拉刷新容器-->
+          <div id="pullrefresh" class="mui-content mui-scroll-wrapper">
+
+            <div class="mui-scroll">
+              <!-- 搜索框 -->
+              <div class="u-search__wrap">
+                <div class="u-search__box">
+                  <span class="mui-icon mui-icon-search"></span>
+                  <input type="search" name="" id="" placeholder="输入关键词搜索">
+                </div>
+              </div>
+              <!-- /搜索框 -->
+              <!--数据列表-->
+              <ul class="c-manage-money-list__wrap">
+                <li>
+                  <div class="u-info-wrap">
+                    <a href="">
+                      <h3 class="u-info-tit">
+                        <span class="u-info-tit__main">海盈系列第1212期海盈系列第1212期海盈系列第1212期</span><span class="u-info-tit__sub">开放T-0产品</span>
+                      </h3>
+                      <div class="c-manage-money-info__end-date">
+                        销售截止日 2018-01-21
+                      </div>
+                      <div class="c-manage-money-info__wrap">
+                        <div class="c-manage-money-info__rate">
+                          <strong>3.80%</strong>
+                          <span>预期年收益</span>
+                          <em class="manage-money-info__date">120天</em>
+                        </div>
+                        <div class="c-manage-money-info__start-at">
+                          <strong>20000元</strong>
+                          <span>起售金额</span>
+                        </div>
+                        <!-- 圆环进度 -->
+                        <div class="c-manage-money-info__percent-wrap">
+                          <div class="c-circleProgress-wrapper">
+                            <div class="c-circleProgress__wrapper c-circleProgress__right">
+                              <div class="c-circleProgress__circleProgress c-circleProgress__rightcircle"></div>
+                            </div>
+                            <div class="c-circleProgress__wrapper c-circleProgress__left">
+                              <div class="c-circleProgress__circleProgress c-circleProgress__leftcircle"></div>
+                            </div>
+                            <div class="c-circleProgress__pecent">90%</div>
+                          </div>
+                          <div class="c-manage-money-info__text">
+                            剩余额度
+                          </div>
+                        </div>
+                        <!-- /圆环进度 -->
+                      </div>
+                    </a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- /理财产品列表 -->
+        <!-- 遮罩 -->
+        <div class="u-mask"></div>
+        <!-- /遮罩f -->
+      </div>
+    </div>
+    <!-- /交易列表 -->
+
+  </section>
+  <script src="js/mui.min.js"></script>
+  <script src="js/mui.picker.min.js"></script>
+
+  <script src="js/jquery-1.10.1.min.js"></script>
+  <script>
+    mui.init({
+      pullRefresh: {
+        container: '#pullrefresh',
+        // down: {
+        //   style: 'circle',
+        //   callback: pulldownRefresh
+        // },
+        up: {
+          auto: true,
+          contentrefresh: '正在加载...',
+          callback: pullupRefresh
+        }
+      }
+    });
+
+    var count = 0;
+
+    function pullupRefresh() {
+      setTimeout(function () {
+        mui('#pullrefresh').pullRefresh().endPullupToRefresh((++count > 2)); //参数为true代表没有更多数据了。
+        var table = document.body.querySelector('.c-manage-money-list__wrap');
+        var cells = document.body.querySelectorAll('.c-manage-money-list__wrap li');
+        var newCount = cells.length > 0 ? 5 : 10; //首次加载20条，满屏
+        for (var i = cells.length, len = i + newCount; i < len; i++) {
+          var li = document.createElement('li');
+          // li.className = 'mui-table-view-cell';
+          li.innerHTML =
+            `
+                  <div class="u-info-wrap">
+                    <h3 class="u-info-tit">
+                      <span class="u-info-tit__main">${i}海盈系列第1212期</span><span class="u-info-tit__sub">开放T-0产品</span>
+                    </h3>
+                    <div class="c-manage-money-info__end-date">
+                      销售截止日 2018-01-21
+                    </div>
+                    <div class="c-manage-money-info__wrap">
+                      <div class="c-manage-money-info__rate">
+                        <strong>3.80%</strong>
+                        <span>预期年收益</span>
+                        <em class="manage-money-info__date">120天</em>
+                      </div>
+                      <div class="c-manage-money-info__start-at">
+                        <strong>20000元</strong>
+                        <span>起售金额</span>
+                      </div>
+                      <!-- 圆环进度 -->
+                      <div class="c-manage-money-info__percent-wrap">
+                        <div class="c-circleProgress-wrapper">
+                          <div class="c-circleProgress__wrapper c-circleProgress__right">
+                            <div class="c-circleProgress__circleProgress c-circleProgress__rightcircle"></div>
+                          </div>
+                          <div class="c-circleProgress__wrapper c-circleProgress__left">
+                            <div class="c-circleProgress__circleProgress c-circleProgress__leftcircle"></div>
+                          </div>
+                          <div class="c-circleProgress__pecent">90%</div>
+                        </div>
+                        <div class="c-manage-money-info__text">
+                          剩余额度
+                        </div>
+                      </div>
+                      <!-- /圆环进度 -->
+                    </div>
+                  </div>
+          `;
+          table.appendChild(li);
+          // 圆环进度
+          (function () {
+            $(".c-circleProgress__pecent").each(function (index) {
+              var that = $(this);
+              var pecent = parseInt(that.text());
+              if (pecent < 50) {
+                that.parent().find(".c-circleProgress__rightcircle").css("transform",
+                  `rotate(${-135 + 180 * pecent / 50}deg)`);
+              } else {
+                that.parent().find(".c-circleProgress__rightcircle").css("transform",
+                  `rotate(45deg)`);
+                that.parent().find(".c-circleProgress__leftcircle").css("transform",
+                  `rotate(${-135 + 180 * (pecent - 50) / 50}deg)`);
+              }
+            });
+          })();
+        }
+      }, 1500);
+    }
+
+    function addData() {
+      var table = document.body.querySelector('.mui-table-view');
+      var cells = document.body.querySelectorAll('.mui-table-view-cell');
+      for (var i = cells.length, len = i + 5; i < len; i++) {
+        var li = document.createElement('li');
+        li.className = 'mui-table-view-cell';
+        li.innerHTML = '<a class="mui-navigate-right">Item ' + (i + 1) + '</a>';
+        //下拉刷新，新纪录插到最前面；
+        table.insertBefore(li, table.firstChild);
+      }
+    }
+    /**
+     * 下拉刷新具体业务实现
+     */
+    function pulldownRefresh() {
+      setTimeout(function () {
+        addData();
+        mui('#pullrefresh').pullRefresh().endPulldownToRefresh();
+        mui.toast("为你推荐了5篇文章");
+      }, 1500);
+    };
+  </script>
+</body>
+
+</html>

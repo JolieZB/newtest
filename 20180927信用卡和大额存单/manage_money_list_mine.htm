@@ -1,0 +1,227 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="yes" name="apple-mobile-web-app-capable" />
+  <meta content="yes" name="apple-touch-fullscreen" />
+  <meta content="telephone=no,email=no" name="format-detection" />
+  <title>我的理财列表</title>
+  <meta name="keywords" content=" " />
+  <meta name="description" content=" " />
+  <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no" />
+  <meta content="telephone=no,email=no" name="format-detection">
+  <link rel="stylesheet" href="css/mui.min.css">
+  <link rel="stylesheet" href="css/common.css">
+  <script src="js/rem.js"></script>
+</head>
+
+<body>
+  <section class="c-page">
+    <!-- 我的理财列表 -->
+    <div class="c-page-tans">
+      <!-- 顶栏 -->
+      <header class="mui-bar mui-bar-nav">
+        <a class="mui-icon mui-icon-left-nav mui-pull-left"><span class="c-top-bar__back">返回</span></a>
+        <h1 class="mui-title">我的理财</h1>
+      </header>
+      <!-- 顶栏 -->
+      <div class="mui-content u-mui">
+
+        <!-- 理财产品列表 -->
+        <div class="c-manage-money-list__pull-wrap">
+          <!--下拉刷新容器-->
+          <div id="pullrefresh" class="mui-content mui-scroll-wrapper">
+
+            <div class="mui-scroll">
+              <!-- 搜索框 -->
+              <!-- <div class="u-search__wrap">
+                <div class="u-search__box">
+                  <span class="mui-icon mui-icon-search"></span>
+                  <input type="search" name="" id="" placeholder="输入关键词搜索">
+                </div>
+              </div> -->
+              <!-- /搜索框 -->
+              <!--数据列表-->
+              <ul class="c-manage-money-list__wrap">
+                <li>
+                  <div class="u-info-wrap">
+                    <h3 class="u-info-tit">
+                      <div class="u-info-tit__wrap">
+                        <span class="u-info-tit__main">海盈系列第1212期</span><span class="u-info-tit__sub">开放T-0产品</span>
+                      </div>
+                      <a class="mui-tab-item" href="#pop0">
+                        <span class="mui-icon mui-icon-more u-info-tit__more-btn"></span>
+                      </a>
+                    </h3>
+                    <div class="c-manage-money-info__wrap">
+                      <ul class="c-manage-money-buy__prod-list">
+                        <li>交易金额<span>3000.00元</span></li>
+                        <li>交易类型<span>理财产品购买</span></li>
+                        <li>交易日期<span>2018-06-02</span></li>
+                        <li>交易账号<span>2323****2323</span></li>
+                        <li>交易状态<span>已成交</span></li>
+                      </ul>
+                      <span class="c-card-tans-item__btn"><span class="mui-icon mui-icon-arrowdown"></span></span>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+              <!-- /数据列表 -->
+            </div>
+          </div>
+        </div>
+        <!-- /理财产品列表 -->
+        <!-- 操作窗口 -->
+        <div id="pop0" class="mui-popover mui-popover-action mui-popover-bottom">
+          <ul class="mui-table-view">
+            <li class="mui-table-view-cell">
+              <a href="#">撤销</a>
+            </li>
+            <li class="mui-table-view-cell">
+              <a href="#">追加</a>
+            </li>
+          </ul>
+          <ul class="mui-table-view">
+            <li class="mui-table-view-cell">
+              <a href="#delete"><b>取消</b></a>
+            </li>
+          </ul>
+        </div>
+        <!-- /操作窗口 -->
+      </div>
+    </div>
+    <!-- /我的理财列表 -->
+
+  </section>
+  <script src="js/mui.min.js"></script>
+
+  <script src="js/jquery-1.10.1.min.js"></script>
+  <script>
+    mui.init({
+      pullRefresh: {
+        container: '#pullrefresh',
+        // down: {
+        //   style: 'circle',
+        //   callback: pulldownRefresh
+        // },
+        up: {
+          auto: true,
+          contentrefresh: '正在加载...',
+          callback: pullupRefresh
+        }
+      }
+    });
+
+    var count = 0;
+
+    function pullupRefresh() {
+      setTimeout(function () {
+        mui('#pullrefresh').pullRefresh().endPullupToRefresh((++count > 2)); //参数为true代表没有更多数据了。
+        var table = document.body.querySelector('.c-manage-money-list__wrap');
+        var cells = document.body.querySelectorAll('.c-manage-money-list__wrap>li');
+        var newCount = cells.length > 0 ? 5 : 10; //首次加载20条，满屏
+        for (var i = cells.length, len = i + newCount; i < len; i++) {
+          var li = document.createElement('li');
+          // li.className = 'mui-table-view-cell';
+          li.innerHTML =
+            `
+                <div class="u-info-wrap">
+                  <h3 class="u-info-tit">
+                    <div class="u-info-tit__wrap">
+                      <span class="u-info-tit__main">${i}海盈系列第1212期</span><span class="u-info-tit__sub">开放T-0产品</span>
+                    </div>
+                    <a class="mui-tab-item" href="#pop${i}">
+                      <span class="mui-icon mui-icon-more u-info-tit__more-btn"></span>
+                    </a>
+                  </h3>
+                  <div class="c-manage-money-info__wrap">
+                    <ul class="c-manage-money-buy__prod-list">
+                      <li>
+                        交易金额<span>3000.00元</span>
+                      </li>
+                      <li>交易类型<span>理财产品购买</span></li>
+                      <li>交易日期<span>2018-06-02</span></li>
+                      <li>交易账号<span>2323****2323</span></li>
+                      <li>交易状态<span>已成交</span></li>
+                    </ul>
+                    <span class="c-card-tans-item__btn"><span class="mui-icon mui-icon-arrowdown"></span></span>
+                  </div>
+                </div>
+          `;
+          table.appendChild(li);
+          var div = document.createElement('div');
+          div.innerHTML =
+            `
+            <div id="pop${i}" class="mui-popover mui-popover-action mui-popover-bottom">
+              <ul class="mui-table-view">
+                <li class="mui-table-view-cell">
+                  <a href="#">撤销</a>
+                </li>
+                <li class="mui-table-view-cell">
+                  <a href="#">追加</a>
+                </li>
+              </ul>
+              <ul class="mui-table-view">
+                <li class="mui-table-view-cell">
+                  <a href="#delete"><b>取消</b></a>
+                </li>
+              </ul>
+            </div>
+          `;
+          document.querySelector('.mui-content').appendChild(div);
+        }
+      }, 1500);
+    }
+
+    function addData() {
+      var table = document.body.querySelector('.mui-table-view');
+      var cells = document.body.querySelectorAll('.mui-table-view-cell');
+      for (var i = cells.length, len = i + 5; i < len; i++) {
+        var li = document.createElement('li');
+        li.className = 'mui-table-view-cell';
+        li.innerHTML = '<a class="mui-navigate-right">Item ' + (i + 1) + '</a>';
+        //下拉刷新，新纪录插到最前面；
+        table.insertBefore(li, table.firstChild);
+      }
+    }
+    /**
+     * 下拉刷新具体业务实现
+     */
+    function pulldownRefresh() {
+      setTimeout(function () {
+        addData();
+        mui('#pullrefresh').pullRefresh().endPulldownToRefresh();
+        mui.toast("为你推荐了5篇文章");
+      }, 1500);
+    };
+
+    // 底部弹窗
+    mui('body').on('tap', '.mui-popover-action li>a', function () {
+      var a = this,
+        parent;
+      //根据点击按钮，反推当前是哪个actionsheet
+      for (parent = a.parentNode; parent != document.body; parent = parent.parentNode) {
+        if (parent.classList.contains('mui-popover-action')) {
+          break;
+        }
+      }
+      //关闭actionsheet
+      mui('#' + parent.id).popover('toggle');
+    });
+
+    // 列表展开闭合
+    $('.c-manage-money-list__wrap').on('tap', '.c-card-tans-item__btn', function () {
+      if ($(this).find('span').hasClass('mui-icon-arrowdown')) {
+        $(this).find('span').removeClass('mui-icon-arrowdown').addClass('mui-icon-arrowup');
+        $(this).prev('ul').addClass('c-manage-money-list-item__showmore');
+      } else {
+        $(this).find('span').addClass('mui-icon-arrowdown').removeClass('mui-icon-arrowup');
+        $(this).prev('ul').removeClass('c-manage-money-list-item__showmore');
+      }
+      return false;
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="yes" name="apple-touch-fullscreen" />
+    <meta content="telephone=no,email=no" name="format-detection" />
+    <title>大额存单在售列表</title>
+    <meta name="keywords" content=" " />
+    <meta name="description" content=" " />
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no" />
+    <meta content="telephone=no,email=no" name="format-detection">
+    <link rel="stylesheet" href="css/mui.min.css">
+    <link rel="stylesheet" href="css/common.css">
+    <script src="js/rem.js"></script>
+</head>
+
+<body>
+    <section class="c-page">
+        <!-- 交易列表 -->
+        <div class="c-page-tans">
+            <!-- 顶栏 -->
+            <header class="mui-bar mui-bar-nav">
+                <a class="mui-icon mui-icon-left-nav mui-pull-left"><span class="c-top-bar__back">返回</span></a>
+                <h1 class="mui-title">在售大额存单</h1>
+            </header>
+            <!-- 顶栏 -->
+            <div class="mui-content u-mui">
+
+                <!-- 理财产品列表 -->
+                <div class="c-manage-money-list__pull-wrap">
+                    <!--下拉刷新容器-->
+                    <div id="pullrefresh" class="mui-content mui-scroll-wrapper">
+
+                        <div class="mui-scroll">
+                            <!-- 搜索框 -->
+                            <div class="u-search__wrap">
+                                <div class="u-search__box">
+                                    <span class="mui-icon mui-icon-search"></span>
+                                    <input type="search" name="" id="" placeholder="输入关键词搜索">
+                                </div>
+                            </div>
+                            <!-- /搜索框 -->
+                            <!--数据列表-->
+                            <ul class="c-manage-money-list__wrap">
+                                <li>
+                                    <div class="u-info-wrap">
+                                        <a href="">
+                                            <h3 class="u-info-tit">
+                                                <span class="u-info-tit__main c-deposit__color-2">个人大额存单20180202M个人大额存单</span>
+                                            </h3>
+                                            <div class="c-manage-money-info__end-date c-manage-money-info__rate">
+                                                发行日 2018-01-21
+                                                <em class="manage-money-info__date">30天</em>
+
+                                            </div>
+                                            <div class="c-manage-money-info__wrap">
+                                                <div class="c-manage-money-info__rate">
+                                                    <strong>1.7050%</strong>
+                                                    <span>预期年收益</span>
+                                                </div>
+                                                <div class="c-manage-money-info__start-at">
+                                                    <strong class="c-deposit__money-pos">50000</strong>
+                                                    <span>起售金额(元)</span>
+                                                </div>
+                                                <div class="c-manage-money-info__start-at">
+                                                    <strong class="c-deposit__money-pos">50000</strong>
+                                                    <span>递增金额(元)</span>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- /理财产品列表 -->
+                <!-- 遮罩 -->
+                <div class="u-mask"></div>
+                <!-- /遮罩f -->
+            </div>
+        </div>
+        <!-- /交易列表 -->
+
+    </section>
+    <script src="js/mui.min.js"></script>
+    <script src="js/mui.picker.min.js"></script>
+
+    <script src="js/jquery-1.10.1.min.js"></script>
+    <script>
+        mui.init({
+            pullRefresh: {
+                container: '#pullrefresh',
+                // down: {
+                //   style: 'circle',
+                //   callback: pulldownRefresh
+                // },
+                up: {
+                    auto: true,
+                    contentrefresh: '正在加载...',
+                    callback: pullupRefresh
+                }
+            }
+        });
+
+        var count = 0;
+
+        function pullupRefresh() {
+            setTimeout(function () {
+                mui('#pullrefresh').pullRefresh().endPullupToRefresh((++count > 3)); //参数为true代表没有更多数据了。
+                var table = document.body.querySelector('.c-manage-money-list__wrap');
+                var cells = document.body.querySelectorAll('.c-manage-money-list__wrap li');
+                var newCount = cells.length > 0 ? 5 : 10; //首次加载20条，满屏
+                for (var i = cells.length, len = i + newCount; i < len; i++) {
+                    var li = document.createElement('li');
+                    // li.className = 'mui-table-view-cell';
+                    li.innerHTML =
+                        `
+                            <div class="u-info-wrap">
+                                <a href="">
+                                    <h3 class="u-info-tit">
+                                        <span class="u-info-tit__main c-deposit__color-2">${i}个人大额存单20180202M</span>
+                                    </h3>
+                                    <div class="c-manage-money-info__end-date c-manage-money-info__rate">
+                                        发行日 2018-01-21
+                                        <em class="manage-money-info__date">30天</em>
+                                    </div>
+                                    <div class="c-manage-money-info__wrap">
+                                        <div class="c-manage-money-info__rate">
+                                            <strong>1.7050%</strong>
+                                            <span>预期年收益</span>
+                                        </div>
+                                        <div class="c-manage-money-info__start-at">
+                                            <strong class="c-deposit__money-pos">50000</strong>
+                                            <span>起售金额(元)</span>
+                                        </div>
+                                        <div class="c-manage-money-info__start-at">
+                                            <strong class="c-deposit__money-pos">50000</strong>
+                                            <span>递增金额(元)</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                         `;
+                    table.appendChild(li);
+                }
+            }, 1500);
+        }
+
+        function addData() {
+            var table = document.body.querySelector('.mui-table-view');
+            var cells = document.body.querySelectorAll('.mui-table-view-cell');
+            for (var i = cells.length, len = i + 5; i < len; i++) {
+                var li = document.createElement('li');
+                li.className = 'mui-table-view-cell';
+                li.innerHTML = '<a class="mui-navigate-right">Item ' + (i + 1) + '</a>';
+                //下拉刷新，新纪录插到最前面；
+                table.insertBefore(li, table.firstChild);
+            }
+        }
+        /**
+         * 下拉刷新具体业务实现
+         */
+        function pulldownRefresh() {
+            setTimeout(function () {
+                addData();
+                mui('#pullrefresh').pullRefresh().endPulldownToRefresh();
+                mui.toast("为你推荐了5篇文章");
+            }, 1500);
+        };
+    </script>
+</body>
+
+</html>

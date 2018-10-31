@@ -1,0 +1,72 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="yes" name="apple-mobile-web-app-capable" />
+  <meta content="yes" name="apple-touch-fullscreen" />
+  <meta content="telephone=no,email=no" name="format-detection" />
+  <title>福建海峡银行</title>
+  <meta name="keywords" content=" " />
+  <meta name="description" content=" " />
+  <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no" />
+  <meta content="telephone=no,email=no" name="format-detection">
+  <link rel="stylesheet" href="css/mui.min.css">
+  <link rel="stylesheet" href="css/common.css">
+  <script src="js/rem.js"></script>
+</head>
+
+<body>
+  <section class="c-page">
+    <!-- 顶栏 -->
+    <header class="mui-bar mui-bar-nav">
+      <a class="mui-icon mui-icon-left-nav mui-pull-left"><span class="c-top-bar__back">返回</span></a>
+      <h1 class="mui-title">收款账号设置</h1>
+    </header>
+    <!-- 顶栏 -->
+    <!-- 信用卡账单 -->
+    <div class="mui-content u-mui">
+      <!-- 银行卡 -->
+      <div class="u-data__wrap">
+        <div class="u-data__tit">
+          收款户名
+        </div>
+        <div class="u-data__list-wrap">
+          <!-- 本行卡 -->
+          <div class="c-credit-card__borrow-card-item c-credit-card__borrow-card-item__active">
+            <div class="c-card-logo"></div>
+            <div class="c-credit-card__borrow-card">
+              <p>福建海峡银行(1233)</p>
+              <p><span>华林支行</span><span>本人本行卡</span></p>
+            </div>
+            <div class="mui-icon mui-icon-checkmarkempty"></div>
+          </div>
+          <!-- /本行卡 -->
+          <!-- 他行卡 -->
+          <div class="c-credit-card__borrow-card-item">
+            <div class="c-card-logo c-card-logo-other"></div>
+            <div class="c-credit-card__borrow-card">
+              <p>中国建设银行(1233)</p>
+              <p><span>华林支行</span><span>本人他行卡</span></p>
+            </div>
+            <div class="mui-icon mui-icon-checkmarkempty"></div>
+          </div>
+          <!-- /他行卡 -->
+        </div>
+      </div>
+      <!-- /银行卡 -->
+
+    </div>
+    <!-- /信用卡账单 -->
+  </section>
+  <script src="js/mui.min.js"></script>
+  <script src="js/jquery-1.10.1.min.js"></script>
+  <script>
+    $(".c-credit-card__borrow-card-item").on("tap", function(e){
+      $(this).parent().children().removeClass("c-credit-card__borrow-card-item__active");
+      $(this).toggleClass("c-credit-card__borrow-card-item__active");
+    });
+  </script>
+</body>
+
+</html>

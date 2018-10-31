@@ -1,0 +1,238 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="yes" name="apple-mobile-web-app-capable" />
+  <meta content="yes" name="apple-touch-fullscreen" />
+  <meta content="telephone=no,email=no" name="format-detection" />
+  <title>理财交易查询</title>
+  <meta name="keywords" content=" " />
+  <meta name="description" content=" " />
+  <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no" />
+  <meta content="telephone=no,email=no" name="format-detection">
+  <link rel="stylesheet" href="css/mui.min.css">
+  <link rel="stylesheet" href="css/common.css">
+  <script src="js/rem.js"></script>
+</head>
+
+<body>
+  <section class="c-page">
+    <!-- 交易列表 -->
+    <div class="c-page-tans">
+      <!-- 顶栏 -->
+      <header class="mui-bar mui-bar-nav">
+        <a class="mui-icon mui-icon-left-nav mui-pull-left"><span class="c-top-bar__back">返回</span></a>
+        <h1 class="mui-title">理财交易查询</h1>
+      </header>
+      <!-- 顶栏 -->
+      <div class="mui-content u-mui">
+        <!-- 银行卡 -->
+        <div id="cCardBox" class="c-card-trans-bar">
+          <span class="c-bar-logo"></span>
+          <span id="cCardItem" class="c-card-tans-card">海峡银行储蓄卡(1233)</span>
+          <span class="mui-icon mui-icon-arrowright"></span>
+        </div>
+        <!-- /银行卡 -->
+        <!-- 筛选框 -->
+        <div class="c-card-tans__tans-select">
+          <a class="c-card-tans__tans-select-active" href="">近一周</a>
+          <a href="">近一月</a>
+          <a href="">近三月</a>
+          <a class="c-card-tans__tans-opt" href="">筛选<span class="mui-icon mui-icon-bars"></span></a>
+          <div class="c-card-tans__tans-screen u-hide">
+            <div class="c-card-tans__tans-screen-wrap">
+              <p>交易类型</p>
+              <strong class="c-card-tans__screen-active">购买<input type="radio" name="paytype"></strong>
+              <strong>赎回<input type="radio" name="paytype"></strong>
+              <strong>到期<input type="radio" name="paytype"></strong>
+              <strong>分红<input type="radio" name="paytype"></strong>
+            </div>
+            <div class="c-card-tans__btn-wrap">
+              <div class="mui-btn mui-btn-primary">
+                确定
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /筛选框 -->
+        <!-- 交易列表 -->
+        <div class="c-card-tans__pull-wrap">
+          <!--下拉刷新容器-->
+          <div id="pullrefresh" class="mui-content mui-scroll-wrapper">
+            <div class="mui-scroll">
+              <!--数据列表-->
+              <ul class="c-manage-money-list__wrap">
+                <li>
+                  <div class="u-info-wrap">
+                    <p class="c-manage-money-trans-tit">2018-12-12<span>1000.00元</span></p>
+                    <div class="c-manage-money-trans-list__wrap">
+                      <ul class="c-manage-money-buy__prod-list">
+                        <li>交易日期<span>2018-06-02</span></li>
+                        <li>交易类型<span>理财产品购买</span></li>
+                        <li>交易渠道<span>手机银行</span></li>
+                        <li>产品名称<span>海峡封闭净值</span></li>
+                        <li>交易金额<span>1100.00元</span></li>
+                        <li>交易份额<span>1100</span></li>
+                      </ul>
+                      <span class="c-card-tans-item__btn"><span class="mui-icon mui-icon-arrowdown"></span></span>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- /交易列表 -->
+        <!-- 遮罩 -->
+        <div class="u-mask"></div>
+        <!-- /遮罩f -->
+      </div>
+    </div>
+    <!-- /交易列表 -->
+
+  </section>
+  <script src="js/mui.min.js"></script>
+  <script src="js/mui.picker.min.js"></script>
+  <script src="js/jquery-1.10.1.min.js"></script>
+  <script>
+    mui.init({
+      pullRefresh: {
+        container: '#pullrefresh',
+        // down: {
+        //   style: 'circle',
+        //   callback: pulldownRefresh
+        // },
+        up: {
+          auto: true,
+          contentrefresh: '正在加载...',
+          callback: pullupRefresh
+        }
+      }
+    });
+
+    var count = 0;
+
+    function pullupRefresh() {
+      setTimeout(function () {
+        mui('#pullrefresh').pullRefresh().endPullupToRefresh((++count > 2)); //参数为true代表没有更多数据了。
+        var table = document.body.querySelector('.c-manage-money-list__wrap');
+        var cells = document.body.querySelectorAll('.c-manage-money-list__wrap li');
+        var newCount = cells.length > 0 ? 5 : 10; //首次加载20条，满屏
+        for (var i = cells.length, len = i + newCount; i < len; i++) {
+          var li = document.createElement('li');
+          // li.className = 'mui-table-view-cell';
+          li.innerHTML =
+            `
+            <div class="u-info-wrap">
+              <p class="c-manage-money-trans-tit">2018-12-12<span>1000.00元</span></p>
+              <div class="c-manage-money-trans-list__wrap">
+                <ul class="c-manage-money-buy__prod-list">
+                  <li>交易日期<span>2018-06-02</span></li>
+                  <li>交易类型<span>理财产品购买</span></li>
+                  <li>交易渠道<span>手机银行</span></li>
+                  <li>产品名称<span>海峡封闭净值</span></li>
+                  <li>交易金额<span>1100.00元</span></li>
+                  <li>交易份额<span>1100</span></li>
+                </ul>
+                <span class="c-card-tans-item__btn"><span class="mui-icon mui-icon-arrowdown"></span></span>
+              </div>
+            </div>
+          `;
+          table.appendChild(li);
+        }
+      }, 1500);
+    }
+
+    function addData() {
+      var table = document.body.querySelector('.mui-table-view');
+      var cells = document.body.querySelectorAll('.mui-table-view-cell');
+      for (var i = cells.length, len = i + 5; i < len; i++) {
+        var li = document.createElement('li');
+        li.className = 'mui-table-view-cell';
+        li.innerHTML = '<a class="mui-navigate-right">Item ' + (i + 1) + '</a>';
+        //下拉刷新，新纪录插到最前面；
+        table.insertBefore(li, table.firstChild);
+      }
+    }
+    /**
+     * 下拉刷新具体业务实现
+     */
+    function pulldownRefresh() {
+      setTimeout(function () {
+        addData();
+        mui('#pullrefresh').pullRefresh().endPulldownToRefresh();
+        mui.toast("为你推荐了5篇文章");
+      }, 1500);
+    };
+
+
+
+
+    (function ($, doc) {
+      // 银行卡选择
+      $.ready(function () {
+        var userPicker = new $.PopPicker();
+        userPicker.setData([{
+          value: 'ywj',
+          text: '董事长 叶文洁'
+        }, {
+          value: 'aaa',
+          text: '总经理 1艾AA'
+        }, {
+          value: 'gezh',
+          text: '歌者'
+        }]);
+        var showUserPickerButton = doc.getElementById('cCardBox');
+        var userResult = doc.getElementById('cCardItem');
+        showUserPickerButton.addEventListener('tap', function (event) {
+          userPicker.show(function (items) {
+            userResult.innerText = JSON.stringify(items[0]);
+            //返回 false 可以阻止选择框的关闭
+            //return false;
+          });
+        }, false);
+
+
+      });
+
+    })(mui, document);
+
+
+    // 列表展开闭合
+    $('.c-card-tans-item__btn').on('tap', function () {
+      if ($(this).find('span').hasClass('mui-icon-arrowdown')) {
+        $(this).find('span').removeClass('mui-icon-arrowdown').addClass('mui-icon-arrowup');
+        $(this).prev('ul').addClass('c-manage-money-list-item__showmore');
+      } else {
+        $(this).find('span').addClass('mui-icon-arrowdown').removeClass('mui-icon-arrowup');
+        $(this).prev('ul').removeClass('c-manage-money-list-item__showmore');
+      }
+      return false;
+    });
+
+    // 筛选展开
+    $(".c-card-tans__tans-select a").on('click', function (event) {
+
+      if ($(this).hasClass("c-card-tans__tans-opt")) {
+        if ($(".c-card-tans__tans-screen").hasClass("u-hide")) {
+          $(".c-card-tans__tans-screen").removeClass("u-hide");
+          $(".u-mask").show();
+        } else {
+          $(".c-card-tans__tans-screen").addClass("u-hide");
+          $(".u-mask").hide();
+        }
+      } else {
+        // 筛选关闭
+        $(".c-card-tans__tans-screen").addClass("u-hide");
+        $(".u-mask").hide();
+        $(this).parent().find("a").removeClass("c-card-tans__tans-select-active");
+        $(this).addClass("c-card-tans__tans-select-active");
+      }
+
+      event.preventDefault();
+    });
+  </script>
+</body>
+
+</html>

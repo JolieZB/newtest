@@ -1,0 +1,247 @@
+// 我的信用卡 @import bank_cards
+
+.c-credit-card__card-balance {
+  margin-top: px2rem(15px);
+
+  p {
+    margin-bottom: px2rem(10px);
+    font-size: 16px;
+    color: #fff;
+
+    span {
+      margin-left: 2em;
+    }
+  }
+}
+
+// 信用卡激活
+.c-credit-card__wrap {
+  margin-top: px2rem(20px);
+  padding: 0 px2rem(30px);
+  background-color: #fff;
+
+  .mui-input-row:last-child {
+    border-bottom: none;
+  }
+
+  label {
+    padding-left: 0;
+  }
+
+  .mui-icon-arrowright {
+    color: #ccc;
+  }
+}
+
+// 信用卡账单
+
+.c-credit-card-bill {
+  padding-top: px2rem(120px);
+
+  .mui-slider-group {
+    padding-top: px2rem(120px);
+  }
+}
+
+.c-credit-card-bill__tabbar {
+  padding: 0 px2rem(30px);
+}
+
+.c-credit-card-bill__bill-item {
+  background-color: #fff;
+  padding: 0 px2rem(30px);
+}
+
+.c-credit-card-bill__bill-item-tit {
+  height: px2rem(80px);
+  line-height: px2rem(80px);
+  font-size: 12px;
+  color: #999;
+  border-bottom: 1px solid #ccc;
+
+  strong {
+    display: block;
+    text-align: right;
+
+    span:first-child {
+      float: left;
+      color: #333;
+      font-size: 14px;
+    }
+  }
+
+  em {
+    float: right;
+  }
+}
+
+.u-corlor-0 {
+  color: #ff9600;
+}
+
+.u-corlor-1 {
+  color: #25a16b;
+}
+
+.u-corlor-2 {
+  color: #f25555;
+}
+
+.c-credit-card-bill__bill-item-detail {
+  font-size: 14px;
+  color: #666;
+  padding: px2rem(14px) 0;
+
+  li {
+    line-height: 22px;
+
+    span {
+      float: right;
+    }
+  }
+}
+
+.c-credit-card-bill__bill-item-btn {
+  padding: px2rem(20px) 0;
+  border-top: 1px solid #ccc;
+  text-align: right;
+
+  span {
+    margin-left: px2rem(20px);
+  }
+}
+
+.u-btn-border {
+  display: inline-block;
+  height: px2rem(44px);
+  line-height: px2rem(42px);
+  padding: 0 px2rem(20px);
+  border: 1px solid $main-color;
+  border-radius: px2rem(22px);
+  font-size: 14px;
+  color: $main-color;
+}
+
+.c-credit-card-bill__bill-list {
+  li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    border-bottom: 1px solid #ccc;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  p {
+    flex: 1;
+    text-align: left;
+
+    strong {
+      float: none;
+      display: block;
+      height: 22px;
+      line-height: 22px;
+      font-size: 15px;
+      color: #333;
+    }
+
+    span {
+      display: block;
+      height: 14px;
+      line-height: 14px;
+      font-size: 10px;
+      color: #666;
+    }
+  }
+
+  em {
+    display: inline-block;
+    flex: 1;
+    text-align: right;
+    font-size: 15px;
+  }
+}
+
+// 随借随还
+.c-credit-card-bill__bill-wrap {
+  li {
+    margin-top: px2rem(20px);
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+}
+
+.c-credit-card-borrow__flex-btn-wrap {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  background-color: #fff;
+  box-shadow: 0 0 3px rgba(0, 0, 0, .5);
+  text-align: center;
+  font-size: 18px;
+
+  span {
+    color: $main-color;
+
+  }
+}
+
+.c-credit-card__borrow-card-item {
+  display: flex;
+  align-items: center;
+  height: px2rem(134px);
+  border-bottom: 1px solid #ccc;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  .mui-icon-checkmarkempty {
+    visibility: hidden;
+    font-size: 40px;
+    color: $main-color;
+  }
+}
+
+.c-credit-card__borrow-card-item__active {
+  .mui-icon-checkmarkempty {
+    visibility: visible;
+  }
+}
+
+.c-card-logo {
+  display: block;
+  width: px2rem(56px);
+  height: px2rem(56px);
+  background: url(../images/card_icon.png) center top no-repeat;
+  background-size: 100% auto;
+}
+
+.c-card-logo-other {
+  background-position: center bottom;
+}
+
+.c-credit-card__borrow-card {
+  flex: 1;
+  padding: 0 px2rem(20px);
+
+  p {
+    font-size: 16px;
+    color: #333;
+  }
+
+  p:last-child {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    color: #ccc;
+  }
+}

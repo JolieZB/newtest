@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="yes" name="apple-touch-fullscreen" />
+    <meta content="telephone=no,email=no" name="format-detection" />
+    <title>预借现金</title>
+    <meta name="keywords" content=" " />
+    <meta name="description" content=" " />
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no" />
+    <meta content="telephone=no,email=no" name="format-detection">
+    <link rel="stylesheet" href="css/mui.min.css">
+    <link rel="stylesheet" href="css/common.css">
+    <script src="js/rem.js"></script>
+    <script src="js/mui.min.js"></script>
+    <script src="js/mui.picker.min.js"></script>
+</head>
+
+<body>
+    <section class="c-page">
+        <div class="c-page-tans">
+            <!-- 顶栏 -->
+            <header class="mui-bar mui-bar-nav">
+                <a class="mui-icon mui-icon-left-nav mui-pull-left"><span class="c-top-bar__back">返回</span></a>
+                <h1 class="mui-title">预借现金确认</h1>
+                <a class="mui-pull-right mui-icon mui-icon-home"></a>
+            </header>
+            <!-- 顶栏 -->
+            <div class="mui-content u-mui">
+                <div>
+                    <div class="mui-input-row cash_advance__tip">
+                        <label>卡号信息</label>
+                    </div>
+                    <div class="cash_advance__wrap">
+                        <div class="mui-input-row">
+                            <label>信用卡卡号</label>
+                            <strong class="cash_advance_input_p">123456****890</strong>
+                        </div>
+                        <div class="mui-input-row">
+                            <label>可用额度</label>
+                            <strong class="cash_advance_input_p">10000元</strong>
+                        </div>
+                        <div class="mui-input-row">
+                            <label>收款账号</label>
+                            <strong class="cash_advance_input_p">123456****890</strong>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="mui-input-row cash_advance__tip">
+                        <label>申请信息</label>
+                    </div>
+                    <div class="cash_advance__wrap">
+                        <div class="mui-input-row">
+                            <label>借款金额</label>
+                            <strong class="cash_advance_input_p">22222.22元</strong>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="mui-input-row cash_advance__tip">
+                        <label>验证信息</label>
+                    </div>
+                    <div class="cash_advance__wrap">
+                        <div class="mui-input-row">
+                            <label>交易密码</label>
+                            <input type="text" required class="mui-input-clear cash_advance_spw" placeholder="请输入交易密码">
+                        </div>
+                        <div class="mui-input-row">
+                            <div class="c-card-binding__checknum-wrap">
+                                <label>验证码</label>
+                                <input type="text" class="mui-input-clear c-card-binding__checknum" placeholder="请输入验证码"
+                                    maxlength="6">
+                            </div>
+                            <input class="c-card__get-checknum" type="button" value="获 取">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="c-credit__act-sus c-credit__spi-pad">
+                <div class="c-credit__blueparent cash_advance__botbtn">
+                    <button type="button" class="mui-btn  mui-btn-primary">返 回</button>
+                    <button type="button" class="mui-btn  mui-btn-primary" id="confirmBtn">确 认</button>
+                </div>
+            </div>
+
+
+        </div>
+        </div>
+    </section>
+    
+    <script>
+        // alertBtn 弹窗
+        document.getElementById("confirmBtn").addEventListener('tap', function () {
+            var btnArray = ['确定'];
+            mui.alert('您尾号6080的信用卡借款1000成功！', '安全提示', btnArray, function (e) { })
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,288 @@
+// 信用卡
+.c-credit__white-bg {
+  background-color: #fff;
+}
+
+.c-credit__spi-pad {
+  padding: 0 0 !important;
+}
+
+.c-credit__act-sus {
+  width: 100%;
+  padding: 0 px2rem(30px);
+
+  label {
+    width: px2rem(206px);
+    padding-left: 0;
+  }
+
+  input[type="text"],
+  input[type="password"] {
+    width: px2rem(460px);
+  }
+
+  button[type="button"] {
+    font-size: 18px;
+    width: px2rem(330px);
+    height: px2rem(90px);
+    line-height: 1;
+    border-radius: 6px;
+    border: none;
+    -webkit-appearance: none;
+    background-color: #49aeed;
+  }
+}
+
+.c-credit__blueparent {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+}
+
+.c-credit__top-top {
+  border-top: 1px solid #ccc;
+  margin-bottom: px2rem(126px);
+}
+
+.c-credit__sus-txt-bottom {
+  width: 100%;
+  font-size: 17px;
+  color: #333;
+  text-align: center;
+  margin: px2rem(150px) auto px2rem(40px);
+}
+
+.c-credit__sus-txt-top {
+  width: 100%;
+  font-size: px2rem(34px);
+  color: #333;
+  text-align: center;
+}
+
+.c-credit__green-circle {
+  border-radius: px2rem(80px);
+  width: px2rem(160px);
+  height: px2rem(160px);
+  border: 4px solid #2bbc69;
+  margin: px2rem(96px) auto px2rem(30px);
+
+  span {
+    color: #2bbc69;
+  }
+}
+
+@media only screen and (min-width:376px) {
+  .c-credit__green-circle {
+    span {
+      font-size: 82px;
+    }
+  }
+
+  .c-card__largebill-txt-strong {
+    width: 166px;
+  }
+}
+
+@media only screen and (min-width:321px) and (max-width: 375px) {
+  .c-credit__green-circle {
+    span {
+      font-size: 72px;
+    }
+  }
+
+  .c-card__largebill-txt-strong {
+    width: 154px;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .c-credit__green-circle {
+    span {
+      font-size: 62px;
+    }
+  }
+
+  .c-card__largebill-txt-strong {
+    width: 126px;
+  }
+}
+
+.cash_advance__tip {
+  font-size: 15px;
+  color: #333;
+  border-bottom: none !important;
+}
+
+.cash_advance__botbtn {
+  margin-top: px2rem(120px);
+  padding: 0 px2rem(30px);
+}
+
+.cash_advance__warn {
+  margin-top: px2rem(60px);
+  padding: 0 px2rem(30px);
+
+  strong {
+    color: #333;
+  }
+
+  p {
+    color: #999;
+    font-size: 13px;
+    margin-top: px2rem(30px);
+    line-height: 22px;
+  }
+}
+
+.c-credit__billing_deal-link {
+  padding: px2rem(30px) px2rem(30px) 0 px2rem(53px);
+
+  a {
+    display: inline-block;
+
+    color: $main-color;
+    text-decoration: none;
+  }
+}
+
+.c-credit__billing_pwd {
+  margin-top: px2rem(20px);
+  background: #fff;
+
+  .mui-input-row:last-child {
+    border-bottom: none;
+  }
+}
+
+.cash_advance__wrap {
+  background-color: #fff;
+  padding: 0 px2rem(30px);
+
+  .mui-input-row:last-child {
+    border-bottom: none;
+  }
+
+  .mui-input-row {
+    .mui-icon-arrowright {
+      color: #ccc;
+    }
+
+    input {
+      flex: 1;
+    }
+
+    input.cash_advance_spw {
+      width: 65%;
+    }
+
+    em {
+      text-align: right;
+      flex: 1;
+      display: inline-block;
+      line-height: 45px;
+      font-size: 15px;
+    }
+  }
+
+  .mui-input-row label {
+    width: px2rem(252px);
+    padding-left: 0px;
+  }
+
+  .cash_advance_input_p {
+    font-size: 15px;
+    line-height: 40px;
+    color: $input-color;
+  }
+
+  .cash_advance_txt-span {
+    font-size: 15px !important;
+  }
+}
+
+.c-credit__transiton-list {
+  margin-bottom: px2rem(20px);
+  padding: px2rem(20px) px2rem(30px);
+  background-color: #fff;
+
+  li {
+    line-height: px2rem(50px);
+    font-size: 13px;
+    overflow: auto;
+
+    strong {
+      float: left;
+      color: #666;
+    }
+
+    em {
+      float: right;
+    }
+  }
+
+
+}
+
+.c-credit__transition-item-btn {
+  text-align: right;
+
+  span {
+    margin-bottom: px2rem(30px);
+  }
+}
+
+.c-credit__transition-item-detail {
+  border-bottom: 1px solid #ccc;
+
+  li {
+    line-height: 22px;
+
+    span {
+      float: right;
+    }
+  }
+
+  &:last-child {
+    border-bottom: none;
+  }
+  .c-credit__transition-btn{
+    margin:px2rem(20px) 0;
+  }
+}
+
+.c-credit__transition-tip-wrap2 {
+  margin-bottom: px2rem(20px);
+  padding: 0 px2rem(30px);
+  background-color: #fff;
+}
+
+.c-credit__transition-tip-txt-wrap2 {
+  padding: 0 0;
+
+  .u-info-tit {
+    padding-left: px2rem(26px);
+
+    &:before {
+      left: 0;
+    }
+  }
+}
+
+// .c-card__largebill-checknum2 {
+//   margin-left: 20px;
+//   // width: px2rem(270px);
+//   float: right;
+//   -webkit-box-sizing: border-box;
+//   box-sizing: border-box;
+//   width: 110px;
+//   padding: 10px;
+//   text-align: center;
+//   border: none !important;
+//   border-radius: 0;
+//   color: #266a94 !important;
+
+//   &:disabled {
+//     color: $placeholder-color;
+//   }
+// }
