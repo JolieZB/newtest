@@ -1,0 +1,12 @@
+module.exports={
+    //属性：对webpack进行配置的属性
+    configureWebpack:{
+        //创建一个模块
+        module:{
+            //指定规则
+            rules:[
+                {test:/\.ico$/,use:'file-loader'}
+            ]
+        }
+    }
+}

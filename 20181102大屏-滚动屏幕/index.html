@@ -1,0 +1,123 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>大屏</title>
+    <link rel="stylesheet" href="css/common.css">
+    <script type="text/javascript" src="JS/jquery-1.10.1.min.js"></script>
+</head>
+
+<body>
+    <div class="main-content">
+        <div class="bigscree-main-top">
+            <p>产品线名称</p>
+        </div>
+        <div class="bigscree-main-info">
+            <div class="bigscree-main-wrap">
+                <img src="images/video_img.png" alt="">
+                <!-- 插入音频文件的时候，注释掉img，放开video即可 -->
+                <!-- <video src="images/DJxaoMax - Let_Me_See_Them_ (Club_Mix 免费下载).mp3" controls></video> -->
+            </div>
+        </div>
+        <div class="bigscreen-main-foot">
+            <img src="images/left_default.png" class="img-l" alt="" id="btn1">
+            <div class="bigscreen-main-logshow div1" id="div1">
+                <ul id="ul1">
+                    <li>
+                        <img src="images/default_icon.png" alt="">
+                        <div>智慧城市1</div>
+                    </li>
+                    <li>
+                        <img src="images/default_icon.png" alt="">
+                        <div>智慧城市2</div>
+                    </li>
+                    <li>
+                        <img src="images/default_icon.png" alt="">
+                        <div>智慧城市3</div>
+                    </li>
+
+                    <li>
+                        <img src="images/snow.png" alt="">
+                        <div>智慧城市4</div>
+                    </li>
+                    <li>
+                        <img src="images/default_icon.png" alt="">
+                        <div>智慧城市5</div>
+                    </li>
+                    <li>
+                        <img src="images/default_icon.png" alt="">
+                        <div>智慧城市6</div>
+                    </li>
+                    <!--<li>
+                        <img src="images/default_icon.png" alt="">
+                        <div>智慧城市7</div>
+                    </li>
+                    <li>
+                        <img src="images/default_icon.png" alt="">
+                        <div>智慧城市8</div>
+                    </li>
+                    <li>
+                        <img src="images/default_icon.png" alt="">
+                        <div>智慧城市9</div>
+                    </li> -->
+                </ul>
+            </div>
+            <img src="images/right_default.png" class="img-r" alt="" id="btn2">
+        </div>
+    </div>
+</body>
+<script>
+    window.onload = function () {
+        var availh = (window.screen.availHeight - 350) * 0.82;
+        var availw = availh * 1.6;
+        $(".bigscree-main-info").css("width", availw);
+        $(".bigscree-main-info").css("height", availh);
+        var div1w = window.screen.availWidth - 300;
+        var icon_count = $('.bigscreen-main-logshow li').size();
+
+        if (icon_count * 300 < div1w) {
+            $('.bigscreen-main-foot>img').hide();
+        } else {
+            var oDiv = document.getElementById('div1');
+            var oUl = document.getElementById('ul1');
+            var speed = -2;//初始化速度
+            oUl.innerHTML += oUl.innerHTML;
+            var oLi = document.getElementsByTagName('li');
+            oUl.style.width = oLi.length * 320 + 'px';//设置ul的宽度使图片可以放下
+
+            var oBtn1 = document.getElementById('btn1');
+            var oBtn2 = document.getElementById('btn2');
+            function move() {
+                if (oUl.offsetLeft < -(oUl.offsetWidth / 2)) {//向左滚动，当靠左的图4移出边框时
+                    oUl.style.left = 0;
+                }
+                if (oUl.offsetLeft > 0) {//向右滚动，当靠右的图1移出边框时
+                    oUl.style.left = -(oUl.offsetWidth / 2) + 'px';
+                }
+                oUl.style.left = oUl.offsetLeft + speed + 'px';
+            }
+            oBtn1.addEventListener('click', function () {
+                speed = -2;
+                $('#btn2').attr("src", "images/right_default.png");
+                $('#btn1').attr("src", "images/left_click.png");
+            }, false);
+            oBtn2.addEventListener('click', function () {
+                speed = 2;
+                $('#btn1').attr("src", "images/left_default.png");
+                $('#btn2').attr("src", "images/right_click.png");
+            }, false);
+            var timer = setInterval(move, 30);//全局变量 ，保存返回的定时器
+
+            oDiv.addEventListener('mouseout', function () {
+                timer = setInterval(move, 30);
+            }, false);
+            oDiv.addEventListener('mousemove', function () {
+                clearInterval(timer);//鼠标移入清除定时器           
+            }, false);
+        }
+
+    }
+</script>
+
+</html>
