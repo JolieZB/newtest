@@ -1,0 +1,68 @@
+body{
+    background-color: #efeff4;
+}
+*{
+    padding: 0;
+    margin: 0;
+    margin-bottom: 0px;
+}
+p{
+    padding: 0;
+    margin: 0;
+}
+.mui-bar-nav {
+    top: 0;
+    -webkit-box-shadow: 0 1px 6px #ccc;
+    box-shadow: 0 1px 0px #ccc;
+    background-color: #fff;
+}
+.pulic{
+    color: #8f8f94;
+    padding-right: 14px;
+}
+.informationPublic{
+    height: 50px;
+    border-bottom: 1px solid #edefef;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 12px;
+    font-size: 13px;
+    color: #636363;
+}
+.information .information-content{
+   background: #fff;
+}
+.information .information-content .avatar{
+   height: 50px;
+   border-bottom: 1px solid #edefef;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   margin-left: 12px;
+   
+}
+.information .information-content .avatar p:nth-child(1){
+   font-size: 13px;
+   color: black;
+ }
+ .information .information-content .avatar div:nth-child(2){
+     padding-right: 12px;
+ }
+ .information .information-content .avatar div:nth-child(2) .circle{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    
+ }
+ .information .information-content .name p:nth-child(2) input{
+    outline:none;
+    background:transparent;
+    border:none;
+     outline:medium;
+ }
+ .school-information{
+     margin-top: 8px;
+     background: #fff;
+ }
+ 

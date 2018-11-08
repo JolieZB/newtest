@@ -1,0 +1,42 @@
+.clear {
+  clear: both;
+  line-height: 1;
+  font-size: 1;
+}
+
+.mui-btn-blue {
+  background: #21bf76;
+  border-color: #21bf76;
+}
+
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+  color: #999;
+}
+
+/*tab*/
+.mui-slider-indicator.mui-segmented-control {
+  background: #fff;
+  border: 0;
+}
+
+.mui-slider .mui-segmented-control.mui-segmented-control-inverted ~ .mui-slider-group .mui-slider-item {
+  border: 0;
+}
+
+.mui-segmented-control .mui-control-item {
+  line-height: 48px;
+}
+
+.mui-segmented-control.mui-segmented-control-inverted ~ .mui-slider-progress-bar {
+  background-color: #21bf76;
+}
+
+.mui-segmented-control.mui-segmented-control-inverted .mui-control-item.mui-active {
+  color: #21bf76;
+}
+
+/*popover*/
+.mui-popover .mui-popover-arrow {
+  display: none;
+}

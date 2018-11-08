@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>首页</title>
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"/>
+        <link rel="stylesheet" href="${ctx.contextPath}/css/gsydmui/mui.min.css">
+        <link rel="stylesheet" href="${ctx.contextPath}/css/gsydmui/iconfont/iconfont.css">
+        <link rel="stylesheet" href="${ctx.contextPath}/css/gsydmui/other/basic.css">
+        <link rel="stylesheet" href="${ctx.contextPath}/css/gsydmui/other/index.css?v=${APP_VERSION}">
+        <link rel="stylesheet" href="${ctx.contextPath}/css/gsydmui/swiper.min.css">
+        <script type="text/javascript" src="${ctx.contextPath}/js/lib/jquery-2.1.4.min.js"></script>
+        <script type="text/javascript" src="${ctx.contextPath}/js/lib/circle.js?v=${APP_VERSION}"></script>
+        <style type="text/css">
+		a,a:hover,a:active,a:visited,a:link,a:focus{
+		    -webkit-tap-highlight-color:rgba(0,0,0,0);
+		    -webkit-tap-highlight-color: transparent;
+		    outline:none;
+		    background: none;
+		    text-decoration: none;
+		}
+		.swiper-container {
+			width: 100%;
+			padding-top:10px;
+		}
+		.swiper-container {
+			width: 100%;
+		}
+		.swiper-slide {
+			width: 180px;
+		}
+		canvas{
+            width: 100%;
+        }
+       </style>
+        <script type="text/javascript">
+           var  ctp = '${ctx.contextPath}';
+        </script>
+	</head>
+	<body>
+		<div class="body">
+			<div class="header">
+				<div class="back">
+					<img src="${ctx.contextPath}/images/gsydimg/pic (3).png">
+				</div>
+				<div class="title" style="width:70%"  >运动数据</div>
+				<div class="header-btn">
+					<div id="setingbtn" style="z-index: 99999;"><img src="${ctx.contextPath}/images/gsydimg/pic (2).png" ></div>
+						<div id="setingbtn" style="z-index: 99999;"><img src="${ctx.contextPath}/images/gsydimg//pic (1).png" /></div>
+				</div>
+			</div>
+			<div class="databox swiper-container">
+				<div class="swiper-wrapper">
+					<!-- 此处需插入前7天数据 -->
+					
+					<div class="jqm-round-wrap swiper-slide">
+						<div class="jqm-round-bg"></div>
+						<canvas id="jqm-round-sector0" class="jqm-round-sector" width="200" height="200"></canvas>
+						<div class="jqm-round-circle">
+							<p style="text-indent: -99999px;line-height: 15px;">50%</p>
+						    <div class="wrap">
+							<p >步数</p>
+							<p class="import" id="indexStep" >0<span>步</span></p>
+							<p class="detail">
+								<span id="indexDistance">0公里</span>
+								<!-- <span id="indexTime">0分钟</span> -->
+								<span id="indexKcai">0卡</span>
+							</p>
+							<p class="detail" id="indexMaxStep">最高0步</p>
+							<div class="time" id="indexDay" ></div>
+							</div>
+						</div>
+				   	</div>
+				   	
+			    </div>
+			</div>
+<!-- 		   <div style="background-color: #FFFFFF;"><p style="color: #B6B6B6;text-align: right;font-size: 14px;padding: 5px 10px;cursor: pointer;"><a id="reportPagebtn">查看分析报告</a>></p></div>
+ -->			
+             <div class="center-box" id='linecharts'>
+				<!-- <p><a href="javascript:void(0);" id="reportPagebtn" >查看分析报告</a>></p> -->
+			</div>
+			<div class="btn-box">
+				<div class="level-box">
+					<div class="btn my-heart" id="heartPagebtn">
+						<img src="${ctx.contextPath}/images/gsydimg/icon (3).png">
+						<div class="text">
+							<span>我的心率</span>
+							<span class="tips">记录运动心率</span>
+						</div>
+					</div>
+					<div class="btn my-trail" id="trajectoryPagebtn">
+						<img src="${ctx.contextPath}/images/gsydimg/icon (1).png">
+						<div class="text">
+							<span>我的轨迹</span>
+							<span class="tips">记录运动轨迹</span>
+						</div>
+					</div>
+				</div>
+				<div class="level-box">
+					<div class="btn my-data" id="dataPagebtn">
+						<img src="${ctx.contextPath}/images/gsydimg/icon (2).png">
+						<div class="text">
+							<span>我的数据</span>
+							<span class="tips">按周/月/年统计数据</span>
+						</div>
+					</div>
+					<div class="btn my-sleep" id="reportPagebtn">
+						<img src="${ctx.contextPath}/images/gsydimg/icon (4).png">
+						<div class="text">
+							<span>我的指数</span>
+						<span class="tips">查看我的指数</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+<script src="${ctx.contextPath}/js/lib/jquery-2.1.4.min.js"></script> 
+<script src="${ctx.contextPath}/js/muilib/mui.min.js"></script>  
+<script src="${ctx.contextPath}/js/lib/jutils.js?v=${APP_VERSION}"></script>
+<script src="${ctx.contextPath}/js/echarlib/echarts.min.js?v=${APP_VERSION}"></script>
+<script src="${ctx.contextPath}/pages/business/band/js/band_index.js?v=166${APP_VERSION}"></script>
+<script src="${ctx.contextPath}/js/lib/swiper.min.js"></script>
+</html>

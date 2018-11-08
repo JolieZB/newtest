@@ -1,0 +1,50 @@
+body{
+    background-color: #efeff4;
+}
+*{
+    padding: 0;
+    margin: 0;
+}
+.mui-bar-nav {
+    top: 0;
+    -webkit-box-shadow: 0 1px 6px #ccc;
+    box-shadow: 0 1px 0px #ccc;
+    background-color: #fff;
+}
+::-webkit-input-placeholder{
+    color: #bbb;;
+    /* font-weight: bold; */
+}
+::-moz-placeholder{
+    color: #aaa;;
+
+}
+:-ms-input-placeholder{
+    color: #aaa;;
+}
+ .self-introduction .self-introduction-text textarea{
+     width: 100%;
+     border: none;
+     padding: 14px;
+     font-size: 12px;
+     box-sizing: border-box;
+     outline:none;
+     outline:medium; 
+     resize:none;
+     margin-bottom: 16px;
+ }
+ .self-introduction .save{
+     width: 90%;
+     height: 38px;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     background: rgb(89, 197, 57);
+     margin: 0 auto;
+     border-radius: 5px;
+     color: #fff;
+     font-size: 14px;
+     
+ }
+
+

@@ -1,0 +1,206 @@
+.header{
+	width: 100%;
+	height: 6vh;
+	line-height: 6vh;
+	color: #FFFFFF;
+	text-align: center;
+	position: relative;
+	z-index: 999;
+}
+.header .back{
+	float: left;
+	display: inline-block;
+	vertical-align: middle;
+	height: 6vh;
+	line-height: 6vh;
+	margin-left: 10px;
+}
+.header .back img{
+	vertical-align: middle;
+	width: 25px;
+	height: 25px;
+}
+.header .header-btn{
+	float: right;
+	display: inline-block;
+	height: 6vh;
+	line-height: 6vh;
+}
+.header .header-btn img{
+	vertical-align: middle;
+	width: 20px;
+	height: 20px;
+	margin-right: 10px;
+}
+.header .title{
+	display: inline-block;
+	position: absolute;
+	margin: auto;
+	top: 0; left: 0; bottom: 0; right: 0;
+}
+.content .comtent-top header{
+    width: 100%;
+}
+.content .comtent-top header img{
+    width: 100%;
+    height: 100%;
+    position:relative;
+}
+.content .comtent-top{
+    position: relative;
+    height: 200px;
+    top: -6vh;
+}
+.content .comtent-top .header-top{
+    margin:0px 10px 10px 10px;
+    border:1px solid #fff;
+    height: 110px;
+    background: #fff;
+    border-radius: 12px;
+   position:relative;
+    top: -84px;
+   z-index: 99;
+   box-shadow: 1px 1px 42px 1px rgba(0, 0, 0, 0.2);
+   display: flex;
+   padding: 20px 8px 14px 18px;;
+}
+.header-top .header-avatar{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+.header-top .header-info{
+    margin-left: 26px;
+    line-height: 17px;
+}
+.header-top .header-info p:nth-child(1){
+    color: black;
+    font-weight: bold;
+    font-size: 15px;
+}
+.header-top .header-info p:nth-child(2){
+    font-size: 12px;
+}
+.header-top .header-info p:nth-child(3){
+    display: flex;
+    align-items: center;
+}
+.header-top .header-info p:nth-child(3) img{
+    width: 10%;
+}
+.header-top .header-info p:nth-child(3) span{
+    padding-left: 5px;
+    color: #59d4d5;
+}
+.header-top .header-edit{
+    right: 10px;
+    position: absolute;
+    color: #77c169;
+    font-size: 12px;
+}
+.header-top .header-edit img{
+    width: 20%;
+}
+
+.content .Introduction{
+    height: 100px;
+    background: #fff;
+    top: -6vh;
+    position: relative;
+}
+.content .Introduction .Introduction-top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #edefef;
+    padding: 10px 12px;
+    font-size: 14px;
+    color: black;
+}
+.content .Introduction .Introduction-top img{
+    width: 5%;
+}
+.content .Introduction .Introduction-content{
+    color: #8f8f94;
+    font-size: 14px;
+    padding: 10px 12px;
+}
+.content .experience{
+    margin-top: 8px;
+    background: #fff;
+}
+.experience .experience-top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #edefef;
+    padding: 10px 12px;
+    font-size: 14px;
+    color: black;
+}
+.experience .experience-top img{
+    width: 6%;
+}
+.experience .experience-content{
+    padding: 10px 12px;
+    border-bottom: 1px solid #edefef;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.experience .experience-content .experience-content-left{
+    display: flex;
+    flex-direction: column;
+    line-height: 27px;
+}
+.experience .experience-content .experience-content-left span:nth-child(2){
+    color: #8f8f94;
+}
+.experience .experience-content .experience-content-right{
+    display: flex;
+    line-height: 27px;
+}
+.experience .experience-content .experience-content-right p{
+    margin-left: 10px;
+}
+.content .impression{
+    margin-top: 8px;
+    background: #fff;
+}
+
+.impression .impression-top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #edefef;
+    padding: 10px 12px;
+    font-size: 14px;
+    color: black;
+}
+.impression .impression-top span:nth-child(2){
+    color: #8f8f94;
+}
+.impression .impression-content{
+    padding: 15px 12px;
+    font-size: 14px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.impression .impression-content span:nth-child(1){
+    color: #77c169;
+    padding-right: 14px;
+}
+.impression .impression-content span:nth-child(2){
+    color: #47a9d6;
+    padding-right: 14px;
+}
+.impression .impression-content span:nth-child(3){
+    color: #ec945a;
+    padding-right: 14px;
+}
+.impression .impression-content span:nth-child(4){
+    color: #59d4d5;
+}
+ 

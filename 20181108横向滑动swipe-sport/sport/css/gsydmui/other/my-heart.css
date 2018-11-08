@@ -1,0 +1,85 @@
+.header{
+	background-color: #ffffff;
+	border-bottom: 1px solid #ECECE8;
+	color: #000000;
+	box-shadow: ;
+}
+.header .title{
+	font-weight: 600;
+}
+.tab-count-box{
+	width: 100%;
+	height: 34vh;
+	background-color:#FFFFFF;
+	padding-top: 10px;
+}
+.tab-count-box .tab-box{
+	margin: auto;
+	height: ;
+	text-align: center;
+}
+.tab-box .tab{
+	display: inline-block;
+	width: 35vw;
+	height: 5vh;
+	line-height: 5vh;
+	border: 1px solid #44C022;
+	border-radius: 5px;
+	color: #44C022;
+}
+.tab.left{
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+}
+.tab.right{
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+}
+.tab-box .tab.active{
+	background-color: #44C022;
+	color: #ffffff;
+}
+.data-box{
+	background-color: #ffffff;
+	width: 100%;
+	height: 20vh;
+	margin-top: 2vh;
+}
+.sta-box{
+	background-color: #ffffff;
+	width: 100%;
+	height: 16vh;
+	margin-top: 2vh;
+}
+.heart-rate{
+	margin-top: 3vh;
+	height: 10vh;
+	padding-top: 3vh;
+	position: relative;
+}
+.heart-rate span{
+	color: #8a8a8a;
+	font-size: 12px;
+	position: absolute;
+}
+.left{
+	top: 0;
+	left: 5vw;
+}
+.right{
+	top: 0;
+	right: 3vw;
+}
+.heart-rate span img{
+	width: 37px;
+	height: 20px;
+}
+.rate-box{
+	clear: both;
+	border-radius: 5px;
+	width: 90vw;
+	margin: auto;
+	height: 10vh;
+	background-color: #FFFFFF;
+	box-shadow: 1px 1px 10px #888888;;
+}
