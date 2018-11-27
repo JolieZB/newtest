@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title>Login Page | Amaze UI Example</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <link rel="alternate icon" type="image/png" href="assets/i/favicon.png">
+  <link rel="stylesheet" href="assets/css/amazeui.min.css"/>
+  <style>
+    .header {
+      text-align: center;
+    }
+    .header h1 {
+      font-size: 200%;
+      color: #333;
+      margin-top: 30px;
+    }
+    .header p {
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+<div class="header">
+  <div class="am-g">
+    <h1>Web ide</h1>
+    <p>Integrated Development Environment<br/>代码编辑，代码生成，界面设计，调试，编译</p>
+  </div>
+  <hr />
+</div>
+<div class="am-g">
+  <div class="am-u-lg-6 am-u-md-8 am-u-sm-centered">
+    <h3>登录</h3>
+    <hr>
+    <div class="am-btn-group">
+      <a href="#" class="am-btn am-btn-secondary am-btn-sm"><i class="am-icon-github am-icon-sm"></i> Github</a>
+      <a href="#" class="am-btn am-btn-success am-btn-sm"><i class="am-icon-google-plus-square am-icon-sm"></i> Google+</a>
+      <a href="#" class="am-btn am-btn-primary am-btn-sm"><i class="am-icon-stack-overflow am-icon-sm"></i> stackOverflow</a>
+    </div>
+    <br>
+    <br>
+
+    <form method="post" class="am-form">
+      <label for="email">邮箱:</label>
+      <input type="email" name="" id="email" value="">
+      <br>
+      <label for="password">密码:</label>
+      <input type="password" name="" id="password" value="">
+      <br>
+      <label for="remember-me">
+        <input id="remember-me" type="checkbox">
+        记住密码
+      </label>
+      <br />
+      <div class="am-cf">
+        <input type="submit" name="" value="登 录" class="am-btn am-btn-primary am-btn-sm am-fl">
+        <input type="submit" name="" value="忘记密码 ^_^? " class="am-btn am-btn-default am-btn-sm am-fr">
+      </div>
+    </form>
+    <hr>
+    <p>© 2014 AllMobilize, Inc. Licensed under MIT license.</p>
+  </div>
+</div>
+
+
+  <video id="video" width="480" height="320" controls>
+  </video>
+  <div>
+    <button id="capture">拍照</button>
+  </div>
+  <canvas id="canvas" width="480" height="320"></canvas>
+  <script>
+    //访问用户媒体设备的兼容方法
+    function getUserMedia(constraints, success, error) {
+      if (navigator.mediaDevices.getUserMedia) {
+        //最新的标准API
+        navigator.mediaDevices.getUserMedia(constraints).then(success).catch(error);
+      } else if (navigator.webkitGetUserMedia) {
+        //webkit核心浏览器
+        navigator.webkitGetUserMedia(constraints,success, error)
+      } else if (navigator.mozGetUserMedia) {
+        //firfox浏览器
+        navigator.mozGetUserMedia(constraints, success, error);
+      } else if (navigator.getUserMedia) {
+        //旧版API
+        navigator.getUserMedia(constraints, success, error);
+      }
+    }
+
+    let video = document.getElementById('video');
+    let canvas = document.getElementById('canvas');
+    let context = canvas.getContext('2d');
+
+    function success(stream) {
+      //兼容webkit核心浏览器
+      let CompatibleURL = window.URL || window.webkitURL;
+      //将视频流设置为video元素的源
+      console.log(stream);
+
+      //video.src = CompatibleURL.createObjectURL(stream);
+      video.srcObject = stream;
+      video.play();
+    }
+
+    function error(error) {
+      console.log(`访问用户媒体设备失败${error.name}, ${error.message}`);
+    }
+
+    if (navigator.mediaDevices.getUserMedia || navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia) {
+      //调用用户媒体设备, 访问摄像头
+      getUserMedia({video : {width: 480, height: 320}}, success, error);
+    } else {
+      alert('不支持访问用户媒体');
+    }
+
+    document.getElementById('capture').addEventListener('click', function () {
+      context.drawImage(video, 0, 0, 480, 320);      
+    })
+  </script>
+    
+</body>
+</html>
